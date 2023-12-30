@@ -5,7 +5,7 @@
       type="video/mp4"
     />
   </video>
-  <component :is="switchComponent" :changeComp="changeComp"/>
+  <component :is="switchComponent" @changeComp="handleComponentChange"/>
 </template>
 
 <script>
@@ -13,7 +13,6 @@ import HomePage from "./components/MyHomepage.vue";
 export default {
   components: {
     HomePage,
-    // Import other components here
   },
   data() {
     return {
@@ -21,7 +20,7 @@ export default {
     };
   },
   methods: {
-    changeComp(cmp) {
+    handleComponentChange(cmp) {
       this.switchComponent = cmp;
     },
   },

@@ -1,11 +1,5 @@
 <template>
-  <div class="navBarContainer">
-    <div class="navBar">
-      <a @click="changeComp('about-me')">About me</a>
-      <a @click="changeComp('my-projects')">Projects</a>
-      <a @click="changeComp('contact-me')">Contact me</a>
-    </div>
-  </div>
+  <base-card :navLinks="navLinks" @changeComp="changeComp" />
   <div class="descriptionContent">
     <p class="type-me" id="type-me">
       <span class="cursor">|</span>
@@ -20,10 +14,15 @@ import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
 export default {
-    props: ["changeComp"],
+  emits: ['changeComp'],
   data() {
     return {
-      switchComponent: "main-page",
+      navLinks: [
+        { label: 'About me', component: 'about-me' },
+        { label: 'Projects', component: 'my-projects' },
+        { label: 'Contact me', component: 'contact-me' },
+        // Add more links as needed
+      ],
     };
   },
   mounted() {
@@ -37,7 +36,7 @@ export default {
       // Typing animation
       timeline.to(textElement, {
         textContent: textArray.slice(0, index + 1).join(""),
-        duration: 0.07,
+        duration: 0.05,
         ease: "power1.inOut",
         onComplete:
           index === textArray.length - 1 ? this.onAnimationComplete : null,
@@ -45,6 +44,10 @@ export default {
     });
   },
   methods: {
+    changeComp(cmp) {
+      console.log(`Changing component to: ${cmp}`);
+      this.$emit('changeComp', cmp);
+    },
     onAnimationComplete() {
       const anchorEl = document.querySelectorAll("a");
       const timeline = gsap.timeline();

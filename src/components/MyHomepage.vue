@@ -1,9 +1,7 @@
 <template>
   <base-card :navLinks="navLinks" @changeComp="changeComp" />
   <div class="descriptionContent">
-    <p class="type-me" id="type-me">
-      <span class="cursor">|</span>
-    </p>
+    <p class="type-me" id="type-me"></p>
   </div>
 </template>
 
@@ -14,14 +12,13 @@ import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
 export default {
-  emits: ['changeComp'],
+  emits: ["changeComp"],
   data() {
     return {
       navLinks: [
-        { label: 'About me', component: 'about-me' },
-        { label: 'Projects', component: 'my-projects' },
-        { label: 'Contact me', component: 'contact-me' },
-        // Add more links as needed
+        { label: "About me", component: "about-me" },
+        { label: "Projects", component: "my-projects" },
+        { label: "Contact me", component: "contact-me" },
       ],
     };
   },
@@ -36,7 +33,7 @@ export default {
       // Typing animation
       timeline.to(textElement, {
         textContent: textArray.slice(0, index + 1).join(""),
-        duration: 0.05,
+        duration: 0.03,
         ease: "power1.inOut",
         onComplete:
           index === textArray.length - 1 ? this.onAnimationComplete : null,
@@ -46,7 +43,7 @@ export default {
   methods: {
     changeComp(cmp) {
       console.log(`Changing component to: ${cmp}`);
-      this.$emit('changeComp', cmp);
+      this.$emit("changeComp", cmp);
     },
     onAnimationComplete() {
       const anchorEl = document.querySelectorAll("a");
@@ -65,24 +62,12 @@ export default {
           }
         );
       });
-      },
+    },
   },
 };
 </script>
 
 <style>
-a {
-  text-decoration: none;
-  color: #001f3f;
-  font-size: 25px;
-  font-family: "Montserrat", sans-serif;
-  opacity: 0;
-}
-
-a:hover {
-  text-shadow: 3px 3px 3px dimgray;
-}
-
 p {
   display: flex;
   flex-flow: column;
@@ -121,5 +106,6 @@ p {
 
 .type-me {
   width: 85%;
+  font-display: swap;
 }
 </style>

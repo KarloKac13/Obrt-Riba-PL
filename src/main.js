@@ -11,21 +11,6 @@ const app = createApp(App);
 
 app.use(SwitchComponentPlugin);
 
-// GLOBAL FUNCTIONS
-
-// app.mixin({
-//   data() {
-//     return {
-//       switchComponent: "HomePage",
-//     };
-//   },
-//   methods: {
-//     changeComp(cmp) {
-//       this.switchComponent = cmp;
-//     },
-//   },
-// });
-
 app
   .component("main-page", MyHomepage)
   .component("about-me", AboutMe)

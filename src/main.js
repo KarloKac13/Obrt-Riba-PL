@@ -6,6 +6,7 @@ import ContactMe from "./components/ContactMe.vue";
 import MyProjects from "./components/MyProjects.vue";
 import SwitchComponentPlugin from "../src/switchComponentPlugin";
 import BaseCard from "./BaseCards/NavigationCard.vue";
+import TheAnimations from "./BaseCards/TheAnimations.vue";
 
 const app = createApp(App);
 
@@ -16,6 +17,7 @@ app
   .component("about-me", AboutMe)
   .component("contact-me", ContactMe)
   .component("my-projects", MyProjects)
-  .component("base-card", BaseCard);
+  .component("base-card", BaseCard)
+  .component("the-animations", TheAnimations)
 
 app.mount("#app");

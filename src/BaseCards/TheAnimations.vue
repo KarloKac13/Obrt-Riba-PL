@@ -162,6 +162,7 @@ export default {
           {
             duration: 0.5,
             y: -100,
+            x: 1000
           },
           {
             opacity: 1,
@@ -184,6 +185,7 @@ export default {
             opacity: 1,
             duration: 0.5,
             y: 0,
+            x: 0
           }
           );
       });

@@ -1,10 +1,12 @@
 <template>
-  <base-card :navLinks="navLinks" @changeComp="changeComp" />
-  <div class="descriptionContent">
-    <p class="top">Some text top</p>
-    <p class="bottom">Some text bottom</p>
-    <p class="top2">Some text top2</p>
-    <p class="bottom2">Some text bottom2</p>
+  <base-card :navLinks="filteredLinks" @changeComp="changeComp" />
+  <div class="descriptionContent2">
+    <div class="descriptionContent">
+      <p class="top paragraphCenter">Some text top</p>
+      <p class="bottom paragraphCenter">Some text bottom</p>
+      <p class="top2 paragraphCenter">Some text top2</p>
+      <p class="bottom2 paragraphCenter">Some text bottom2</p>
+    </div>
   </div>
 </template>
 
@@ -15,20 +17,32 @@ import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(TextPlugin);
 
 export default {
+  props: {
+    backgroundMirror: Boolean,
+    currentPage: String,
+  },
   emits: ["changeComp"],
   data() {
     return {
       navLinks: [
-        { label: "Homepage", component: "main-page" },
-        { label: "About me", component: "about-me" },
-        { label: "Projects", component: "my-projects" },
-        { label: "Contact Me", component: "contact-me" },
+        { label: "Početna", component: "main-page" },
+        { label: "O nama", component: "about-me" },
+        { label: "Projekti", component: "my-projects" },
+        { label: "Kontaktiraj nas", component: "contact-me" },
         // Add more links as needed
       ],
     };
-    },
-    beforeMount() {
-        console.log(this.navLinks[1].component === "about-me")
+  },
+    computed: {
+      filteredLinks() {
+    return this.navLinks.filter(
+      link => link.component !== this.currentPage
+    );
+  }
+},
+  beforeMount() {
+      this.backgroundMirror
+      console.log(this.navLinks[1].component === "about-me")
         // if (this.navLinks[1] && this.navLinks[1].component === "about-me") {
         //     this.navLinks.splice(1,1)
         // }
@@ -39,11 +53,22 @@ export default {
         //     this.navLinks.splice(3,1)
   },
   mounted() {
-    gsap.fromTo(
+    if (this.backgroundMirror) {
+      !this.backgroundMirror;
+      gsap.fromTo(
+        ".top",
+        { y: -500, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, onComplete: this.topComplete }
+      );
+      
+    } else {
+      this.backgroundMirror;
+      gsap.fromTo(
       ".top",
       { y: -500, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.6, onComplete: this.topComplete }
       );
+    }
   },
   beforeUnmount() {
     gsap.set(".top, .bottom, .top2, .bottom2", { opacity: 0 });
@@ -54,27 +79,51 @@ export default {
     },
     changeComp(cmp) {
       console.log(`Changing component to: ${cmp}`);
-        this.$emit("changeComp", cmp);
+      this.$emit("changeComp", cmp);
     },
     topComplete() {
+      if (this.backgroundMirror) {
+        !this.backgroundMirror
       gsap.fromTo(
         ".bottom",
-        { y: 500, opacity: 0 },
+        { y: 250, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.6, onComplete: this.top2 }
       );
+      } else {
+      this.backgroundMirror
+      gsap.fromTo(
+        ".bottom",
+        { y: 250, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, onComplete: this.top2 }
+      );
+    }
+      
     },
     top2() {
+      if (this.backgroundMirror) {
+      !this.backgroundMirror
       gsap.fromTo(
         ".top2",
         { y: -250, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.6, onComplete: this.bottom2 }
       );
+      } else {
+      this.backgroundMirror
+      gsap.fromTo(
+        ".top2",
+        { y: -250, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, onComplete: this.bottom2 }
+      );
+    }
+  
     },
     bottom2() {
+      if (this.backgroundMirror) {
+        !this.backgroundMirror
       gsap.fromTo(
         ".bottom2",
         {
-          y: 500,
+          y: 250,
           opacity: 0,
         },
         {
@@ -84,10 +133,29 @@ export default {
           onComplete: this.onAnimationComplete,
         }
       );
+      } else {
+      this.backgroundMirror
+      gsap.fromTo(
+        ".bottom2",
+        {
+          y: 250,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          onComplete: this.onAnimationComplete,
+        }
+      );
+    }
+      
     },
     onAnimationComplete() {
       const anchorEl = document.querySelectorAll("a");
-      const timeline = gsap.timeline();
+      if (this.backgroundMirror) {
+        !this.backgroundMirror;
+        const timeline = gsap.timeline();
         anchorEl.forEach((anchor) => {
         timeline.fromTo(
           anchor,
@@ -102,6 +170,25 @@ export default {
           }
           );
       });
+      } else {
+        this.backgroundMirror;
+        const timeline = gsap.timeline();
+        anchorEl.forEach((anchor) => {
+        timeline.fromTo(
+          anchor,
+          {
+            duration: 0.5,
+            y: -100,
+          },
+          {
+            opacity: 1,
+            duration: 0.5,
+            y: 0,
+          }
+          );
+      });
+      }
+      
     },
   },
 };
@@ -113,7 +200,21 @@ export default {
   flex-flow: column;
 }
 
+.paragraphCenter {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
 p:not(:first-child) {
   opacity: 0;
+}
+
+.descriptionContent2 {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 </style>

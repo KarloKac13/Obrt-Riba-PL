@@ -8,6 +8,7 @@
       >
         {{ link.label }}
       </a>
+      <img src="../components/Ribaprofitlablogo.png" />
     </div>
   </div>
 </template>
@@ -36,10 +37,16 @@ a {
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
   opacity: 0;
+  transform: translate(0px, 0px);
 }
 
 a:hover {
   text-shadow: 3px 3px 3px dimgray;
   cursor: pointer;
+}
+
+img {
+  height: 250px;
+  width: 375px;
 }
 </style>

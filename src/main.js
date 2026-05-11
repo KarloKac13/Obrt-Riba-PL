@@ -10,6 +10,7 @@ import TheAnimations from "./BaseCards/TheAnimations.vue";
 import VideoBackgroundReverse from "./BaseCards/VideoBackgroundReverse.vue";
 import VideoBackground from "./BaseCards/VideoBackground.vue";
 
+
 const app = createApp(App);
 
 app.use(SwitchComponentPlugin);

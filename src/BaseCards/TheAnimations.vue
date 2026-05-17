@@ -27,8 +27,8 @@ export default {
       navLinks: [
         { label: "Početna", component: "main-page" },
         { label: "O nama", component: "about-me" },
-        { label: "Projekti", component: "my-projects" },
-        { label: "Kontaktiraj nas", component: "contact-me" },
+        { label: "Usluge", component: "my-projects" },
+        { label: "Projekti", component: "contact-me" },
         // Add more links as needed
       ],
     };

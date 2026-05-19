@@ -8,7 +8,7 @@
       >
         {{ link.label }}
       </router-link>
-      <img src="../components/Ribaprofitlablogo.png" />
+      <img src="/companyImages/Ribaprofitlablogo.png" />
     </div>
   </div>
 </template>

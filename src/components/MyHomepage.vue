@@ -72,8 +72,9 @@
           <p v-if="!success && errorMessage" class="success">
             {{ errorMessage }}
           </p>
-        </form>
-        <!-- MOVE COOKIE BAR HERE -->
+        </form>        
+      </div>
+      <!-- MOVE COOKIE BAR HERE -->
 <div v-if="showCookies" class="cookie-bar">
   <p>
     Ova stranica koristi osnovne kolačiće potrebne za rad stranice i obradu kontakt forme.
@@ -83,7 +84,6 @@
     U redu
   </button>
 </div>
-      </div>
     </div>
   </div>
   <div class="carousel-wrapper">
@@ -312,6 +312,11 @@ export default {
     );
   },
   methods: {
+    acceptCookies() {
+  localStorage.setItem("cookiesAccepted", "true");
+  this.showCookies = false;
+    },
+
    animateCarousel() {
   const items = document.querySelectorAll(".carousel-item");
   const total = this.companies.length;

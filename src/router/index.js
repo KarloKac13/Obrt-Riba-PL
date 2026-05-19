@@ -4,6 +4,7 @@ import HomePage from "../components/MyHomepage.vue";
 import AboutMe from "../components/AboutMe.vue";
 import Projects from "../components/MyProjects.vue";
 import Usluge from "../components/ContactMe.vue";
+import "/public/mediaqueries.css";
 
 const routes = [
   {

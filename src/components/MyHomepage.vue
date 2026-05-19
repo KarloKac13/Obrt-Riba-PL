@@ -458,14 +458,14 @@ p {
   color: #001f3f;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
-  line-height: 50px;
-  width: 100%;
-  text-align: center;
+  line-height: 50px!important;
+  width: 100%!important;
+  text-align: center!important;
 }
 
 .p1 {
   color: #001f3f;
-  font-size: 55px;
+  font-size: 55px!important;
   font-family: "Montserrat", sans-serif;
   line-height: 50px;
   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #001,
@@ -474,67 +474,67 @@ p {
 
 .p2 {
   color: white;
-  font-size: 55px;
+  font-size: 55px!important;
   font-family: "Montserrat", sans-serif;
   line-height: 50px;
   text-shadow: 0 0 2.5px #001, 0 0 5px #001f, 0 0 10px #001f3f;
 }
 
 .navBarContainer {
-  display: flex;
-  flex-flow: row;
-  height: 33%;
+  display: flex!important;
+  flex-flow: row!important;
+  height: 20%!important;
   width: 65%;
-  justify-content: start;
+  justify-content: start!important;
 }
 
 .navBar {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
+  display: flex!important;
+  flex-flow: row!important;
+  flex-wrap: wrap!important;
+  align-items: center!important;
+  width: 100%!important;
   height: 175px;
-  justify-content: space-evenly;
+  justify-content: space-evenly!important;
 }
 
 .descriptionContent {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  width: 100%;
-  justify-content: flex-start;
+  display: flex!important;
+  flex-flow: column!important;
+  height: 100%!important;
+  width: 100%!important;
+  justify-content: space-evenly!important;
 }
 
 .descriptionContentReverse {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  width: 100%;
-  justify-content: flex-start;
-  margin-left: auto;
+  display: flex!important;
+  flex-flow: column!important;
+  height: 100%!important;
+  width: 100%!important;
+  justify-content: flex-start!important;
+  margin-left: auto!important;
 }
 
 .typeMe {
   position: relative;
   text-align: center;
   font-display: swap;
-  width: 80%;
+  width: 80%!important;
 }
 
 .typeMe2 {
   position: relative;
   text-align: right;
   font-display: swap;
-  width: 70%;
+  width: 70%!important;
 }
 
 .specialHpClass {
-  display: flex;
-  flex-flow: column;
-  height: 700px;
-  width: 100%;
-  justify-content: center;
+display: flex!important;
+  flex-flow: column!important;
+  height: 700px!important;
+  width: 100%!important;
+  justify-content: center!important;
 }
 
 .color1 {
@@ -549,13 +549,13 @@ p {
 }
 
 .contactBox {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
-  min-height: 430px;
-  opacity: 0.8;
-  border-radius: 20px;
-  width: 100%;
+  display: flex!important;
+  flex-flow: row!important;
+  justify-content: space-evenly!important;
+  height: 100%!important;
+  opacity: 0.8!important;
+  border-radius: 20px!important;
+  width: 70%!important;
 }
 
 /* background-color: #eef3f8 !important;
@@ -580,8 +580,8 @@ button {
 }
 
 input {
-  width: 392px;
-  height: 30px;
+  width: 100%;
+  height: 50px;
 }
 
 input:focus {
@@ -607,11 +607,11 @@ textarea:focus {
 }
 
 form {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  width: 400px;
-  height: 325px;
+  display: flex!important;
+  flex-flow: column!important;
+  justify-content: space-evenly!important;
+  width: 500px!important;
+  /* height: 550px!important; */
 }
 
 .spiral-container {

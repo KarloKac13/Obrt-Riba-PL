@@ -45,16 +45,16 @@ methods: {
 
 <style>
 video {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-   transition: transform 0.6s ease;
+  position: fixed!important;
+  width: 100%!important;
+  height: 100%!important;
+  object-fit: cover!important;
+  z-index: -1!important;
+   transition: transform 0.6s ease!important;
 }
 
 .mirrored {
-  transform: scaleX(-1);
-  transform-origin: center;
+  transform: scaleX(-1)!important;
+  transform-origin: center!important;
 }
 </style>

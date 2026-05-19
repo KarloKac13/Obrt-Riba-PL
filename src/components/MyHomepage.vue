@@ -428,6 +428,7 @@ p {
   font-family: "Montserrat", sans-serif;
   line-height: 50px;
   width: 100%;
+  text-align: center;
 }
 
 .p1 {
@@ -689,4 +690,5 @@ pointer-events: auto;
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+
 </style>

@@ -55,12 +55,10 @@ export default {
   data() {
     return {
       navLinks: [
-        { label: "Početna", component: "main-page" },
-        { label: "O nama", component: "about-me" },
-        { label: "Usluge", component: "my-projects" },
-        { label: "Projekti", component: "contact-me" },
-        // Add more links as needed
-      ],
+  { label: "O nama", path: "/o-nama" },
+  { label: "Usluge", path: "/usluge" },
+  { label: "Projekti", path: "/kontakt" },
+],
     };
   },
     computed: {

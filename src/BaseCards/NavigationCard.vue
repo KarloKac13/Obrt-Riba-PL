@@ -1,13 +1,13 @@
 <template>
   <div class="navBarContainer">
     <div class="navBar">
-      <a
-        v-for="link in navLinks"
-        :key="link.label"
-        @click="handleLinkClick(link.component)"
+      <router-link
+        v-for="link in filteredLinks"
+        :key="link.to"
+        :to="link.to"
       >
         {{ link.label }}
-      </a>
+      </router-link>
       <img src="../components/Ribaprofitlablogo.png" />
     </div>
   </div>
@@ -22,9 +22,21 @@ export default {
     },
     onChangeComp: Function,
   },
-  methods: {
-    handleLinkClick(cmp) {
-      this.$emit("changeComp", cmp); // Call the prop method
+
+
+  data() {
+    return {
+      links: [
+        { to: "/", label: "Početna" },
+        { to: "/o-nama", label: "O nama" },
+        { to: "/usluge", label: "Usluge" },
+        { to: "/projekti", label: "Projekti" },
+      ],
+    }
+  },
+  computed: {
+    filteredLinks() {
+      return this.links.filter(link => link.to !== this.$route.path);
     },
   },
 };

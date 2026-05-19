@@ -12,7 +12,7 @@
 
   .p1,
   .p2 {
-    font-size: 35px;
+    font-size: 35px!important;
   }
 
   form {
@@ -46,6 +46,11 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10), 0 18px 45px rgba(0, 31, 63, 0.12);
     transition: all 0.25s ease;
 }
+
+.descriptionContent {
+    height: 93%!important;
+}
+
 }
 
 @media (min-width: 481px) {
@@ -53,6 +58,11 @@
   .navBar {
     flex-direction: column!important;
     justify-content: space-between!important;
+  }
+
+  .p1,
+  .p2 {
+    font-size: 35px!important;
   }
 
   form {
@@ -81,6 +91,10 @@
     margin: 22px auto;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10), 0 18px 45px rgba(0, 31, 63, 0.12);
     transition: all 0.25s ease;
+}
+
+.descriptionContent {
+    height: 95%!important;
 }
 }
 
@@ -112,6 +126,10 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10), 0 18px 45px rgba(0, 31, 63, 0.12);
     transition: all 0.25s ease;
 }
+
+    .descriptionContent {
+        height: 90% !important;
+    }
   
 }
 
@@ -135,6 +153,10 @@
   input {
         width: 97%;
     }
+
+    .descriptionContent {
+    height: 95%!important;
+}
 }
 
 @media (min-width: 1025px) {
@@ -152,7 +174,7 @@
 
   .p1,
   .p2 {
-    font-size: 35px;
+    font-size: 55px!important;
   }
 
   form {
@@ -166,5 +188,9 @@
   .carousel-item {
     height: 100%;
   }
+
+  .descriptionContent {
+    height: 100%!important;
+}
 
 }

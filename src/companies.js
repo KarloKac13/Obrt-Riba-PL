@@ -1,7 +1,7 @@
 export const companies = [
   {
     name: "GAD",
-    logo: "/companyImages/gadlogo.jpeg",
+    logo: "/companyImages/gadlogo.png",
     url: "https://www.gad.hr/",
   },
   {
@@ -17,6 +17,11 @@ export const companies = [
   {
     name: "aTeam",
     logo: "/companyImages/aTeamremovebgpreview.png",
-    url: "https://www.facebook.com/ateameffect?locale=hr_HR"
+    url: "https://www.facebook.com/ateameffect?locale=hr_HR",
+  },
+  {
+    name: "pNp",
+    logo: "/companyImages/pnp.svg",
+    url: "https://eushipments.com/hr/",
   },
 ];

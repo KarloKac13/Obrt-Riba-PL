@@ -58,6 +58,13 @@
             required
           >
           </textarea>
+          <div class="consent-box">
+  <input type="checkbox" id="consent" required />
+  
+  <label for="consent">
+    Slažem se s obradom osobnih podataka u svrhu odgovora na upit.
+  </label>
+</div>
           <button :disabled="loading" type="submit">
             {{ loading ? "Slanje..." : "Pošalji nam poruku" }}
           </button>
@@ -66,6 +73,16 @@
             {{ errorMessage }}
           </p>
         </form>
+        <!-- MOVE COOKIE BAR HERE -->
+<div v-if="showCookies" class="cookie-bar">
+  <p>
+    Ova stranica koristi osnovne kolačiće potrebne za rad stranice i obradu kontakt forme.
+  </p>
+
+  <button @click="acceptCookies">
+    U redu
+  </button>
+</div>
       </div>
     </div>
   </div>
@@ -162,6 +179,8 @@ export default {
       autoPlay: null,
 
       companies,
+
+      showCookies: true,
     };
   },
 
@@ -170,6 +189,9 @@ export default {
   },
 
   mounted() {
+    if (localStorage.getItem("cookiesAccepted")) {
+  this.showCookies = false;
+}
     //     const spiral = document.getElementById("spiral");
 
     //     const radius = 120;
@@ -290,28 +312,33 @@ export default {
     );
   },
   methods: {
-    animateCarousel() {
+   animateCarousel() {
   const items = document.querySelectorAll(".carousel-item");
   const total = this.companies.length;
+
+  const spacing = 220;
+  const centerX = 0;
 
   items.forEach((item, i) => {
     let offset = i - this.currentIndex;
 
-    // infinite wrap
-    offset = ((offset + total / 2) % total) - total / 2;
+    // stable circular wrap
+    if (offset > total / 2) offset -= total;
+    if (offset < -total / 2) offset += total;
+
+    const x = centerX + offset * spacing;
 
     gsap.to(item, {
-  rotateY: offset * -30,
-  x: offset * 220,
-  z: offset === 0 ? 200 : -Math.abs(offset) * 100,
-  scale: offset === 0 ? 1.2 : 0.8,
-  opacity: Math.abs(offset) > 2 ? 0 : 1,
+      x,
+      y: 0,
+      scale: offset === 0 ? 1.2 : 0.85,
+      opacity: Math.abs(offset) > 3 ? 0 : 1,
+      zIndex: 1000 - Math.abs(offset),
 
-  zIndex: 1000 - Math.abs(offset), // 🔥 CRITICAL FIX
-
-  duration: 0.8,
-  ease: "power3.out",
-});
+      duration: 0.6,
+      ease: "power2.out",
+      overwrite: true
+    });
   });
 },
 
@@ -520,7 +547,7 @@ p {
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
-  height: 350px;
+  min-height: 430px;
   opacity: 0.8;
   border-radius: 20px;
   width: 100%;
@@ -637,58 +664,148 @@ form {
   transform: scale(1.05);
 }
 
-
-
 .carousel-wrapper {
   width: 100%;
-  height: 500px;
+  height: 250px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  perspective: 1200px;
   overflow: hidden;
+
+  position: relative;
 }
 
 .carousel {
   position: relative;
-  width: 600px;
-  height: 300px;
-  pointer-events: auto;
-  transform-style: preserve-3d;
-   position: relative;
-  transform-style: preserve-3d;
-  isolation: isolate; /* 🔥 prevents stacking conflicts */
+
+  width: 800px;
+  height: 200px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-item {
   position: absolute;
+
   width: 180px;
   height: 180px;
-  left: 50%;
+
   top: 50%;
-  margin-left: -90px;
-  margin-top: -90px;
+
+  transform: translateY(-50%);
 
   cursor: pointer;
-  pointer-events: auto;
-  transform-style: preserve-3d;
-
-  will-change: transform;
 }
 
 .carousel-item img {
   width: 100%;
   height: 100%;
-pointer-events: auto;
-  cursor: pointer;
   object-fit: contain;
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+.consent-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 10px;
+
+  font-size: 13px;
+  color: #001f3f;
+
+  line-height: 1.5;
 }
 
+.consent-box input {
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: #001f3f;
+}
+
+.consent-box label {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.cookie-bar {
+  position: fixed;
+  pointer-events: auto;
+  bottom: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 90%;
+  max-width: 700px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(0, 31, 63, 0.12);
+
+  border-radius: 18px;
+
+  padding: 16px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  z-index: 9999;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.12),
+    0 20px 60px rgba(0,31,63,0.10);
+}
+
+.cookie-bar p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #001f3f;
+
+  margin: 0;
+  text-align: left;
+}
+
+.cookie-bar button {
+  background: #001f3f;
+  color: white;
+
+  border: none;
+
+  min-width: 90px;
+  height: auto;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.cookie-bar button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
 </style>

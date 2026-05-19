@@ -1,23 +1,22 @@
 <template>
   <base-card :navLinks="navLinks" @changeComp="changeComp" />
-  <div style="display: flex; justify-content: evenly;">
-  <div
-    v-bind="$attrs"
-    style="width: 100%"
-    :class="{ descriptionContentReverse: this.backgroundMirror }"
-    class="descriptionContent"
-  >
-    <p
-      :class="['typeMe', 'p1', { color1: this.backgroundMirror }]"
-      id="typeMe"
-    ></p>
-    <p
-      :class="['typeMe2', 'p2', { color2: this.backgroundMirror }]"
-      id="typeMe2"
-    ></p>
-     
-  </div>
-  <div
+  <div style="display: flex; justify-content: evenly">
+    <div
+      v-bind="$attrs"
+      style="width: 100%"
+      :class="{ descriptionContentReverse: this.backgroundMirror }"
+      class="descriptionContent"
+    >
+      <p
+        :class="['typeMe', 'p1', { color1: this.backgroundMirror }]"
+        id="typeMe"
+      ></p>
+      <p
+        :class="['typeMe2', 'p2', { color2: this.backgroundMirror }]"
+        id="typeMe2"
+      ></p>
+    </div>
+    <!-- <div
     style="
       width: 100%;
       display: flex;
@@ -29,8 +28,63 @@
   <div class="spiral-container">
       <div class="spiral" id="spiral"></div>
     </div>
-  </div></div> 
-   <div style="display: flex; justify-content: center; width: 50%;">
+  </div>-->
+    <div style="display: flex; justify-content: center; width: 50%">
+      <div :class="['contactBox']">
+        <form @submit.prevent="submitForm" id="form">
+          <p style="font-weight: bold; text-decoration: underline">
+            Pošaljite nam upit!
+          </p>
+          <input
+            autocomplete="on"
+            v-model="form.name"
+            type="text"
+            placeholder="Vaše ime"
+            required
+          />
+          <input
+            autocomplete="on"
+            v-model="form.email"
+            type="email"
+            placeholder="Vaš E-mail"
+            required
+          />
+          <textarea
+            id="message"
+            v-model="form.message"
+            type="text"
+            placeholder="Vaša poruka"
+            rows="5"
+            required
+          >
+          </textarea>
+          <button :disabled="loading" type="submit">
+            {{ loading ? "Slanje..." : "Pošalji nam poruku" }}
+          </button>
+
+          <p v-if="!success && errorMessage" class="success">
+            {{ errorMessage }}
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div
+  v-for="(company, i) in companies"
+  :key="i"
+  class="carousel-item"
+   @click="handleCompanyClick(i, company)"
+>
+  <img
+    :src="company.logo"
+    :alt="company.name"
+  />
+</div>
+    </div>
+  </div>
+  <!-- <div style="display: flex; justify-content: center; width: 50%;">
       
       <div :class="['contactBox']">
       <form @submit.prevent="submitForm" id="form">
@@ -67,7 +121,7 @@
         </p>
       </form>
       </div>
-    </div>
+    </div> -->
 </template>
 
 <script>
@@ -103,83 +157,102 @@ export default {
       loading: false,
       success: false,
       errorMessage: "",
+
+      currentIndex: 0,
+      autoPlay: null,
+
+      companies,
     };
   },
+
+  beforeUnmount() {
+    clearInterval(this.autoPlay);
+  },
+
   mounted() {
-    const spiral = document.getElementById("spiral");
+    //     const spiral = document.getElementById("spiral");
 
-    const radius = 120;
-    const spacing = 22;
+    //     const radius = 120;
+    //     const spacing = 22;
 
-    const totalHeight = companies.length * spacing;
+    //     const totalHeight = companies.length * spacing;
 
-    let rotation = 0;
+    //     let rotation = 0;
 
-    companies.forEach((company) => {
-      const div = document.createElement("div");
-      div.className = "company";
-      const img = document.createElement("img");
-img.src = company.logo;
-img.alt = company.name;
+    //     companies.forEach((company) => {
+    //       const div = document.createElement("div");
+    //       div.className = "company";
+    //       const img = document.createElement("img");
+    // img.src = company.logo;
+    // img.alt = company.name;
 
-div.appendChild(img);
+    // div.appendChild(img);
 
-      spiral.appendChild(div);
-    });
+    //       spiral.appendChild(div);
+    //     });
 
-    const items = document.querySelectorAll(".company");
+    //     const items = document.querySelectorAll(".company");
 
-    function animate() {
-      rotation += 0.002;
+    //     function animate() {
+    //       rotation += 0.002;
 
-      items.forEach((item, i) => {
-        const angle = i * 0.4 + rotation;
+    //       items.forEach((item, i) => {
+    //         const angle = i * 0.4 + rotation;
 
-        const x = Math.cos(angle) * radius;
-        const z = Math.sin(angle) * radius;
+    //         const x = Math.cos(angle) * radius;
+    //         const z = Math.sin(angle) * radius;
 
-        const y =
-          ((i * spacing + rotation * 100) % totalHeight) - totalHeight / 2;
+    //         const y =
+    //           ((i * spacing + rotation * 100) % totalHeight) - totalHeight / 2;
 
-        /* ---------- DEPTH (consistent system) ---------- */
-        const depth = (z + radius) / (radius * 2); // 0 back → 1 front
+    //         /* ---------- DEPTH (consistent system) ---------- */
+    //         const depth = (z + radius) / (radius * 2); // 0 back → 1 front
 
-        /* ---------- VISUALS ---------- */
-        const scale = 0.7 + depth * 0.5;
-        const scaleBoost = 0.8 + depth * 0.4;
+    //         /* ---------- VISUALS ---------- */
+    //         const scale = 0.7 + depth * 0.5;
+    //         const scaleBoost = 0.8 + depth * 0.4;
 
-        const blur = (1 - depth) * 3;
-        const brightness = 0.7 + depth * 0.6;
+    //         const blur = (1 - depth) * 3;
+    //         const brightness = 0.7 + depth * 0.6;
 
-        /* ---------- OPACITY FADE ---------- */
-        let opacity = scale;
+    //         /* ---------- OPACITY FADE ---------- */
+    //         let opacity = scale;
 
-        const fadeStart = 220;
-        const fadeEnd = 320;
+    //         const fadeStart = 220;
+    //         const fadeEnd = 320;
 
-        if (Math.abs(y) > fadeStart) {
-          opacity *= 1 - (Math.abs(y) - fadeStart) / (fadeEnd - fadeStart);
-        }
+    //         if (Math.abs(y) > fadeStart) {
+    //           opacity *= 1 - (Math.abs(y) - fadeStart) / (fadeEnd - fadeStart);
+    //         }
 
-        if (Math.abs(y) > fadeEnd) {
-          opacity = 0;
-        }
+    //         if (Math.abs(y) > fadeEnd) {
+    //           opacity = 0;
+    //         }
 
-        /* ---------- APPLY ---------- */
-        item.style.filter = `blur(${blur}px) brightness(${brightness})`;
+    //         /* ---------- APPLY ---------- */
+    //         item.style.filter = `blur(${blur}px) brightness(${brightness})`;
 
-        item.style.opacity = opacity;
+    //         item.style.opacity = opacity;
 
-        item.style.transform = `
-  translate3d(${x}px, ${y}px, ${z}px)
-  scale(${scale * scaleBoost})
-`;
-      });
+    //         item.style.transform = `
+    //   translate3d(${x}px, ${y}px, ${z}px)
+    //   scale(${scale * scaleBoost})
+    // `;
+    //       });
 
-      requestAnimationFrame(animate);
-    }
+    //       requestAnimationFrame(animate);
+    //     }
 
-    animate();
+    //     animate();
+
+    this.$nextTick(() => {
+    this.animateCarousel();
+
+    this.autoPlay = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  });
+
 
     const textElement = document.querySelector(".typeMe");
     const text2Element = document.querySelector(".typeMe2");
@@ -217,6 +290,61 @@ div.appendChild(img);
     );
   },
   methods: {
+    animateCarousel() {
+  const items = document.querySelectorAll(".carousel-item");
+  const total = this.companies.length;
+
+  items.forEach((item, i) => {
+    let offset = i - this.currentIndex;
+
+    // infinite wrap
+    offset = ((offset + total / 2) % total) - total / 2;
+
+    gsap.to(item, {
+  rotateY: offset * -30,
+  x: offset * 220,
+  z: offset === 0 ? 200 : -Math.abs(offset) * 100,
+  scale: offset === 0 ? 1.2 : 0.8,
+  opacity: Math.abs(offset) > 2 ? 0 : 1,
+
+  zIndex: 1000 - Math.abs(offset), // 🔥 CRITICAL FIX
+
+  duration: 0.8,
+  ease: "power3.out",
+});
+  });
+},
+
+    nextSlide() {
+      this.currentIndex = (this.currentIndex + 1) % this.companies.length;
+
+  this.animateCarousel();
+},
+
+prevSlide() { this.currentIndex =
+    (this.currentIndex - 1 + this.companies.length) %
+    this.companies.length;
+
+  this.animateCarousel();
+},
+
+goToSlide(index) {
+  this.currentIndex = index;
+  this.animateCarousel();
+},
+
+
+   handleCompanyClick(i, company) {
+  this.currentIndex = i;
+  this.animateCarousel();
+
+  if (company.url) {
+    setTimeout(() => {
+      window.open(company.url, "_blank");
+    }, 300);
+  }
+},
+
     async submitForm() {
       this.loading = true;
       this.success = false;
@@ -392,19 +520,20 @@ p {
   flex-flow: row;
   justify-content: space-evenly;
   height: 350px;
-  background-color: #eef3f8 !important;
-  opacity: 0.65;
+  opacity: 0.8;
   border-radius: 20px;
-  border: 1px solid rgba(0, 31, 63, 0.08) !important;
-  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.08), 0 2px 4px rgba(0, 31, 63, 0.04) !important;
-  transition: 0.3s ease;
-  width: 100%
+  width: 100%;
 }
 
-.contactBox:hover {
+/* background-color: #eef3f8 !important;
+border: 1px solid rgba(0, 31, 63, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 31, 63, 0.08), 0 2px 4px rgba(0, 31, 63, 0.04) !important;
+  transition: 0.3s ease; */
+
+/* .contactBox:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 40px rgba(0, 31, 63, 0.16);
-}
+} */
 
 ::placeholder {
   color: #001f3f;
@@ -418,7 +547,7 @@ button {
 }
 
 input {
-  width: 350px;
+  width: 392px;
   height: 30px;
 }
 
@@ -448,6 +577,8 @@ form {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
+  width: 400px;
+  height: 325px;
 }
 
 .spiral-container {
@@ -465,7 +596,7 @@ form {
     black 85%,
     transparent
   );
-  width: 100%
+  width: 100%;
 }
 
 .spiral {
@@ -496,13 +627,66 @@ form {
 
   transition: transform 0.1s linear;
 
-   mix-blend-mode: multiply;
-   
+  mix-blend-mode: multiply;
 }
 
 .company:hover img {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
+}
+
+
+
+.carousel-wrapper {
+  width: 100%;
+  height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  pointer-events: auto;
+  transform-style: preserve-3d;
+   position: relative;
+  transform-style: preserve-3d;
+  isolation: isolate; /* 🔥 prevents stacking conflicts */
+}
+
+.carousel-item {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  left: 50%;
+  top: 50%;
+  margin-left: -90px;
+  margin-top: -90px;
+
+  cursor: pointer;
+  pointer-events: auto;
+  transform-style: preserve-3d;
+
+  will-change: transform;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+pointer-events: auto;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 </style>

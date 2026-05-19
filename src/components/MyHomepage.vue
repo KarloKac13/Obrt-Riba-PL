@@ -1,5 +1,6 @@
 <template>
   <base-card :navLinks="navLinks" @changeComp="changeComp" />
+  <div style="display: flex; justify-content: evenly;">
   <div
     v-bind="$attrs"
     style="width: 100%"
@@ -14,6 +15,7 @@
       :class="['typeMe2', 'p2', { color2: this.backgroundMirror }]"
       id="typeMe2"
     ></p>
+     
   </div>
   <div
     style="
@@ -21,9 +23,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 180%;
     "
   >
-    <div :class="['contactBox']">
+  <div class="spiral-container">
+      <div class="spiral" id="spiral"></div>
+    </div>
+  </div></div> 
+   <div style="display: flex; justify-content: center; width: 50%;">
+      
+      <div :class="['contactBox']">
       <form @submit.prevent="submitForm" id="form">
         <p>Pošaljite nam upit!</p>
         <input
@@ -57,11 +66,8 @@
           {{ errorMessage }}
         </p>
       </form>
+      </div>
     </div>
-    <div class="spiral-container">
-      <div class="spiral" id="spiral"></div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -327,7 +333,7 @@ p {
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 175px;
   justify-content: space-evenly;
 }
 
@@ -336,7 +342,7 @@ p {
   flex-flow: column;
   height: 100%;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .descriptionContentReverse {
@@ -344,7 +350,7 @@ p {
   flex-flow: column;
   height: 100%;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   margin-left: auto;
 }
 
@@ -353,7 +359,6 @@ p {
   text-align: center;
   font-display: swap;
   width: 80%;
-  height: 100%;
 }
 
 .typeMe2 {
@@ -361,7 +366,6 @@ p {
   text-align: right;
   font-display: swap;
   width: 70%;
-  height: 100%;
 }
 
 .specialHpClass {
@@ -389,7 +393,7 @@ p {
   justify-content: space-evenly;
   height: 350px;
   background-color: #eef3f8 !important;
-  opacity: 0.8;
+  opacity: 0.65;
   border-radius: 20px;
   border: 1px solid rgba(0, 31, 63, 0.08) !important;
   box-shadow: 0 4px 12px rgba(0, 31, 63, 0.08), 0 2px 4px rgba(0, 31, 63, 0.04) !important;
@@ -447,7 +451,7 @@ form {
 }
 
 .spiral-container {
-  height: 100vh;
+  height: 105%;
   perspective: 1200px;
   display: flex;
   justify-content: center;
@@ -478,24 +482,22 @@ form {
   left: 50%;
   top: 50%;
 
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 
   padding: 1rem;
 
   border-radius: 16px;
 
-  background: #eef3f8;
   color: #001f3f;
 
   text-align: center;
   font-weight: bold;
 
-  box-shadow: 0 8px 20px rgba(0, 31, 63, 0.12);
-
   transition: transform 0.1s linear;
 
    mix-blend-mode: multiply;
+   
 }
 
 .company:hover img {

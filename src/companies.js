@@ -1,139 +1,19 @@
 export const companies = [
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
-  },
-  {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",
@@ -152,20 +32,20 @@ export const companies = [
     logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",
@@ -184,20 +64,20 @@ export const companies = [
     logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",
@@ -216,20 +96,20 @@ export const companies = [
     logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",
@@ -248,20 +128,20 @@ export const companies = [
     logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",
@@ -280,20 +160,20 @@ export const companies = [
     logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "GAD",
+    logo: "/companyImages/gadlogo.jpeg",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Fridro",
+    logo: "/companyImages/Fridroremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "Herlig",
+    logo: "/companyImages/Herligremovebgpreview.png",
   },
   {
-    name: "Google",
-    logo: "https://www.google.com/s2/favicons?domain=google.com&sz=128",
+    name: "aTeam",
+    logo: "/companyImages/aTeamremovebgpreview.png",
   },
   {
     name: "Google",

@@ -483,7 +483,6 @@ p {
 .navBarContainer {
   display: flex!important;
   flex-flow: row!important;
-  height: 20%!important;
   width: 65%;
   justify-content: start!important;
 }

@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+
 export default {
   props: {
     navLinks: {
@@ -34,11 +36,41 @@ export default {
       ],
     }
   },
+
   computed: {
     filteredLinks() {
       return this.links.filter(link => link.to !== this.$route.path);
     },
+
+    cleanPage() {
+    return this.currentPage?.replace("/", "");
+    },
   },
+
+   mounted() {
+    this.animateLinks();
+  },
+
+  methods: {
+    animateLinks() {
+      const links = this.$el.querySelectorAll("a");
+
+      gsap.fromTo(
+        links,
+        {
+          opacity: 0,
+          y: -10
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out"
+        }
+      );
+    }
+  }
 };
 </script>
 

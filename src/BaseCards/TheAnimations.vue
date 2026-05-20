@@ -1,43 +1,95 @@
 <template>
-  <base-card :navLinks="filteredLinks" @changeComp="changeComp" />
-  <div class="descriptionContent2">
-    <div class="descriptionContent">
-    <div class="paragraphCenter service-item">
-    
-    <p id="top" class="top paragraphCenter"> <span class="section-title">O nama</span>
+  <div class="page-wrapper">
 
-<span style="text-align: center;">Mi smo platforma za poslovno savjetovanje i povezivanje koja spaja potražnju i ponudu na učinkovit način. Naš cilj je povezati klijente koji traže određene proizvode s <span class="highlight">provjerenim dobavljačima</span> koji te proizvode nude.
+    <base-card
+      :navLinks="filteredLinks"
+      @changeComp="changeComp"
+    />
 
-Djelujemo u različitim industrijama – od kućanskih i kuhinjskih proizvoda do građevinskog materijala i industrijske opreme. Umjesto dugotrajnog pretraživanja tržišta, omogućujemo <span class="highlight">izravno povezivanje s pravim partnerom</span>.</span></p></div>
-    <div class="paragraphCenter service-item"><p id="bottom" class="bottom paragraphCenter"> <span class="section-title">Što radimo</span>
+    <div class="descriptionContent2">
+      <div class="descriptionContent" v-if="cleanPage === 'o-nama'">
 
-<span style="text-align: center;">Primamo upite klijenata i poduzeća  
+        <!-- O NAMA -->
+
+        <div class="paragraphCenter ">
+          <p class="top paragraphCenter">
+            <span class="section-title">O nama</span>
+            <span style="text-align: center;">Mi smo platforma za poslovno savjetovanje i povezivanje koja spaja potražnju i ponudu na učinkovit način. Naš cilj je povezati klijente koji traže određene proizvode s <span class="highlight">provjerenim dobavljačima</span> koji te proizvode nude.
+
+Djelujemo u različitim industrijama – od kućanskih i kuhinjskih proizvoda do građevinskog materijala i industrijske opreme. Umjesto dugotrajnog pretraživanja tržišta, omogućujemo <span class="highlight">izravno povezivanje s pravim partnerom</span>.</span>
+          </p>
+        </div>
+
+        <div class="paragraphCenter ">
+          <p class="bottom paragraphCenter">
+            <span class="section-title">Što radimo</span>
+            <span style="text-align: center;">Primamo upite klijenata i poduzeća  
 Povezujemo ih s odgovarajućim dobavljačima  
 Omogućujemo brzu i učinkovitu komunikaciju između strana  
-Pružamo dodatnu vidljivost partnerskim tvrtkama kroz našu platformu</span></p></div>
-    <div class="paragraphCenter service-item"><p id="top2" class="top2 paragraphCenter"> <span class="section-title">Naše usluge</span>
+Pružamo dodatnu vidljivost partnerskim tvrtkama kroz našu platformu</span>
+          </p>
+        </div>
 
-<span class="highlight"> Savjetovanje i povezivanje</span> <span id="checkmark1"> analiziramo potrebe i povezujemo klijente s odgovarajućim dobavljačima.</span>
+        <div class="paragraphCenter ">
+          <p class="top2 paragraphCenter">
+            <span class="section-title">Naše usluge</span>
+            <span class="highlight"> Savjetovanje i povezivanje</span> <span id="checkmark1"> analiziramo potrebe i povezujemo klijente s odgovarajućim dobavljačima.</span>
 
 <span class="highlight"> B2B povezivanje</span> <span id="checkmark2"> pomažemo tvrtkama u širenju tržišta i pronalasku novih klijenata.</span>
 
-<span class="highlight"> Oglašavanje i promocija</span> <span id="checkmark3"> omogućujemo tvrtkama veću vidljivost i potvrdu suradnje kroz našu platformu.</span></p></div>
-    <div class="paragraphCenter service-item"><p id="bottom2" class="bottom2 paragraphCenter"> <span class="section-title">Kako radimo</span>
+<span class="highlight"> Oglašavanje i promocija</span> <span id="checkmark3"> omogućujemo tvrtkama veću vidljivost i potvrdu suradnje kroz našu platformu.</span>
+          </p>
+        </div>
 
-Naš poslovni model temelji se na dva glavna principa:
+        <div class="paragraphCenter ">
+          <p class="bottom2 paragraphCenter">
+            <span class="section-title">Kako radimo</span>
+            Naš poslovni model temelji se na dva glavna principa:
 
 <span id="checkmark4" class="highlight"> Povezivanje ponude i potražnje kroz direktne poslovne kontakte</span>  
 <span id="checkmark5" class="highlight"> Oglašavanje i promocija partnerskih tvrtki unutar naše mreže</span>  
 
 Naš cilj je postati pouzdan posrednik u poslovnim lancima koji omogućuje brže, jednostavnije i učinkovitije nabavne procese.
 
-Gradimo mrežu u kojoj pronalazak pravog proizvoda ili partnera više nije problem, već jednostavan proces.</p></div>
-      
-      
-      
-      
+Gradimo mrežu u kojoj pronalazak pravog proizvoda ili partnera više nije problem, već jednostavan proces.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- USLUGE -->
+      <div class="descriptionContent" v-else-if="cleanPage === 'usluge'">
+
+        <div class="paragraphCenter ">
+          <p class="bottom paragraphCenter">
+            <span class="section-title">Nabava i širenje prodajne mreže</span>
+Kroz profesionalan pristup nabavi i razvoju prodajne mreže pomažemo tvrtkama u pronalasku novih poslovnih prilika, partnerstava i distribucijskih kanala s ciljem dugoročnog rasta i jačanja prisutnosti na tržištu.
+
+          </p>
+        </div>
+
+        <div class="paragraphCenter ">
+          <p class="top2 paragraphCenter">
+            <span class="section-title">Oglašavanje na našem webu</span>
+Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem brendu, proizvodima ili uslugama osigurali veću vidljivost, prepoznatljivost i kvalitetniji doseg prema ciljanoj publici.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PROJEKTI -->
+      <div v-else-if="cleanPage === 'projekti'">
+
+        <div class="paragraphCenter ">
+          <p class="top paragraphCenter">
+            <span class="section-title">Projekti</span>
+            ...
+          </p>
+        </div>
+
+      </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -49,184 +101,89 @@ gsap.registerPlugin(TextPlugin);
 export default {
   props: {
     backgroundMirror: Boolean,
-    currentPage: String,
   },
+
   emits: ["changeComp"],
+
   data() {
     return {
       navLinks: [
-  { label: "O nama", path: "/o-nama" },
-  { label: "Usluge", path: "/usluge" },
-  { label: "Projekti", path: "/kontakt" },
-],
+        { label: "O nama", path: "o-nama" },
+        { label: "Usluge", path: "usluge" },
+        { label: "Projekti", path: "projekti" },
+      ],
     };
   },
-    computed: {
-      filteredLinks() {
-    return this.navLinks.filter(
-      link => link.component !== this.currentPage
-    );
+
+  computed: {
+    filteredLinks() {
+      return this.navLinks.filter(
+        link => link.path !== this.currentPage
+      );
+    },
+
+    cleanPage() {
+    return this.currentPage?.replace("/", "");
+    },
+
+    currentPage() {
+    return this.$route.path.replace("/", "");
   }
-},
-  beforeMount() {
-      this.backgroundMirror
-      console.log(this.navLinks[1].component === "about-me")
-        // if (this.navLinks[1] && this.navLinks[1].component === "about-me") {
-        //     this.navLinks.splice(1,1)
-        // }
-        // else if (this.navLinks[2] && this.navLinks[2].component === "my-projects") {
-        //     this.navLinks.splice(2,1)
-        // }
-        // else (this.navLinks[3] && this.navLinks[3].component === "contact-me")
-        //     this.navLinks.splice(3,1)
   },
+
+  watch: {
+    currentPage() {
+      this.$nextTick(() => {
+        requestAnimationFrame(() => {
+          this.runAnimation();
+        });
+      });
+    }
+  },
+
   mounted() {
-    if (this.backgroundMirror) {
-      !this.backgroundMirror;
-      gsap.fromTo(
-        ".top",
-        { y: -500, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, onComplete: this.topComplete }
-      );
-      
-    } else {
-      this.backgroundMirror;
-      gsap.fromTo(
-      ".top",
-      { y: -500, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.6, onComplete: this.topComplete }
-      );
-    }
+    this.$nextTick(() => {
+      requestAnimationFrame(() => {
+        this.runAnimation();
+      });
+    });
   },
-  beforeUnmount() {
-    gsap.set(".top, .bottom, .top2, .bottom2", { opacity: 0 });
-  },
+
   methods: {
-    close() {
-      this.$emit("close");
+    runAnimation() {
+      const el = document.querySelector(".page-wrapper");
+      if (!el) return;
+
+      const items = el.querySelectorAll(".top, .bottom, .top2, .bottom2");
+      if (!top) return;
+
+      gsap.fromTo(
+  items,
+  { y: -80, opacity: 0 },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 0.6,
+    stagger: 0.15,
+    ease: "power2.out"
+  }
+);
     },
+
     changeComp(cmp) {
-      console.log(`Changing component to: ${cmp}`);
       this.$emit("changeComp", cmp);
-    },
-    topComplete() {
-      if (this.backgroundMirror) {
-        !this.backgroundMirror
-      gsap.fromTo(
-        ".bottom",
-        { y: 250, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, onComplete: this.top2 }
-      );
-      } else {
-      this.backgroundMirror
-      gsap.fromTo(
-        ".bottom",
-        { y: 250, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, onComplete: this.top2 }
-      );
     }
-      
-    },
-    top2() {
-      if (this.backgroundMirror) {
-      !this.backgroundMirror
-      gsap.fromTo(
-        ".top2",
-        { y: -250, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, onComplete: this.bottom2 }
-      );
-      } else {
-      this.backgroundMirror
-      gsap.fromTo(
-        ".top2",
-        { y: -250, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, onComplete: this.bottom2 }
-      );
-    }
-  
-    },
-    bottom2() {
-      if (this.backgroundMirror) {
-        !this.backgroundMirror
-      gsap.fromTo(
-        ".bottom2",
-        {
-          y: 250,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          onComplete: this.onAnimationComplete,
-        }
-      );
-      } else {
-      this.backgroundMirror
-      gsap.fromTo(
-        ".bottom2",
-        {
-          y: 250,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          onComplete: this.onAnimationComplete,
-        }
-      );
-    }
-      
-    },
-    onAnimationComplete() {
-      const anchorEl = document.querySelectorAll("a");
-      if (this.backgroundMirror) {
-        !this.backgroundMirror;
-        const timeline = gsap.timeline();
-        anchorEl.forEach((anchor) => {
-        timeline.fromTo(
-          anchor,
-          {
-            duration: 0.5,
-            y: -100,
-            x: 1000
-          },
-          {
-            opacity: 1,
-            duration: 0.5,
-            y: 0,
-          }
-          );
-      });
-      } else {
-        this.backgroundMirror;
-        const timeline = gsap.timeline();
-        anchorEl.forEach((anchor) => {
-        timeline.fromTo(
-          anchor,
-          {
-            duration: 0.5,
-            y: -100,
-          },
-          {
-            opacity: 1,
-            duration: 0.5,
-            y: 0,
-            x: 0
-          }
-          );
-      });
-      }
-      
-    },
-  },
+  }
 };
 </script>
 
 <style>
+/* unchanged */
+</style>
 
-#top, #bottom, #top2, #bottom2 {
+<style>
+
+.top, .bottom, .top2, .bottom2 {
   display: flex;
   flex-flow: column;
   color: #001a33;
@@ -264,12 +221,14 @@ box-shadow:
 .descriptionContent {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
 
 .paragraphCenter {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: center;
+  width: 70%;
 }
 
 p:not(:first-child) {
@@ -282,6 +241,7 @@ p:not(:first-child) {
   width: 100%;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 
@@ -290,7 +250,7 @@ p:not(:first-child) {
   font-size: 22px;
   font-weight: 700;
   color: #001f3f;
-
+  text-align: left;
   margin-bottom: 14px;
   letter-spacing: 0.5px;
 
@@ -307,16 +267,6 @@ p:not(:first-child) {
   margin-top: 8px;
   border-radius: 2px;
   opacity: 0.6;
-}
-
-.service-item {
-  margin-bottom: 18px;
-}
-
-.service-item strong {
-  display: block;
-  margin-bottom: 6px;
-  color: #001f3f;
 }
 
 .highlight {
@@ -346,5 +296,8 @@ p:not(:first-child) {
   margin-right: 8px; /* Adds spacing between the checkmark and text */
 }
 
-
 </style>
+
+
+
+

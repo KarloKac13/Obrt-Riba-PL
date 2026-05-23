@@ -24,4 +24,14 @@ export const companies = [
     logo: "/companyImages/pnp.svg",
     url: "https://eushipments.com/hr/",
   },
+  {
+    name: "K-destilery",
+    logo: "/companyImages/kdestilery-removebg-preview.png",
+    url: "https://www.instagram.com/k_distillery_/",
+  },
+  {
+    name: "Domaća Priča",
+    logo: "/companyImages/domacaprica-removebg-preview.png",
+    url: "https://www.instagram.com/domaca_prica__/",
+  },
 ];

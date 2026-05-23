@@ -86,6 +86,9 @@
 </div>
     </div>
   </div>
+  <div>
+    <p>Klikom na logotipe naših klijenata, saznajte što oni mogu učiniti za Vas!</p>
+  </div>
   <div class="carousel-wrapper">
     <div class="carousel">
       <div
@@ -594,10 +597,14 @@ input:focus {
   border-color: #001f3f;
 }
 
+textarea {
+   border-radius: 5px;
+}
+
 textarea:focus {
   outline: none;
   border-color: #001f3f;
-  box-shadow: 0 0 5px rgba(0, 31, 63, 0.3);
+  box-shadow: 0 0 5px rgba(0, 31, 63, 0.3)!important;
 }
 
 textarea:hover,

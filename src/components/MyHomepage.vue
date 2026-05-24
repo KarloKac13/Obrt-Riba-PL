@@ -108,7 +108,7 @@
       </button>
       <div style="display: flex; flex-flow: row; justify-content: flex-end; align-items: center; width: 90%; flex-wrap: wrap;">
         <span class="icon">📞</span>
-        <span href="tel:+385977947589" class="label">+385 97 794 7589</span>
+        <span href="tel:+385977947589" class="label phone-link" @click="callNumber('+385977947589')">+385 97 794 7589</span>
       </div>
       <button class="copy" @click.stop="copyPhone('+385977947589')">
     Kopiraj broj
@@ -395,6 +395,11 @@ export default {
     // );
   },
   methods: {
+
+   callNumber(number) {
+  window.location.href = `tel:${number}`;
+},
+
   async copyPhone(number) {
   try {
     await navigator.clipboard.writeText(number);
@@ -1059,5 +1064,15 @@ textarea:focus {
 .copy:hover {
   background: #001f3f;
   color: white;
+}
+
+.phone-link {
+  color: #001f3f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
 }
 </style>

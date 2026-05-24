@@ -90,8 +90,53 @@
           <p v-if="!success && errorMessage" class="success">
             {{ errorMessage }}
           </p>
-        </form>        
-      </div>
+        </form>
+        <div>
+  <p>Kontaktirajte nas direktno:</p>
+
+<div style="display: flex; flex-flow: row; justify-content: flex-start; align-items: center;">
+ <div class="emails">
+
+  <div class="email-grid">
+  <div style="display: flex; flex-flow: column; align-items: center;">
+    <div class="email-card" @click="openEmail('info@rpl.com')">
+      <span class="icon">✉</span>
+      <span class="label">info@rpl.com</span>
+      <button class="copy" @click.stop="copyEmail('info@rpl.com')">
+        Kopiraj
+      </button>
+    </div>
+
+    <div class="email-card" @click="openEmail('davor@rpl.com')">
+      <span class="icon">✉</span>
+      <span class="label">davor@rpl.com</span>
+      <button class="copy" @click.stop="copyEmail('davor@rpl.com')">
+         Kopiraj
+      </button>
+    </div>
+    </div>
+
+  <div style="display: flex; flex-flow: column; align-items: center;">
+    <div class="email-card" @click="openEmail('karlo@rpl.com')">
+      <span class="icon">✉</span>
+      <span class="label">karlo@rpl.com</span>
+      <button class="copy" @click.stop="copyEmail('karlo@rpl.com')">
+         Kopiraj
+      </button>
+    </div>
+
+    <div class="email-card" @click="openEmail('ivan@rpl.com')">
+      <span class="icon">✉</span>
+      <span class="label">ivan@rpl.com</span>
+      <button class="copy" @click.stop="copyEmail('ivan@rpl.com')">
+         Kopiraj
+      </button>
+    </div>
+    </div>
+  </div>
+</div></div>
+      </div></div>
+      
       <!-- MOVE COOKIE BAR HERE -->
 <div v-if="showCookies" class="cookie-bar">
   <p>
@@ -343,6 +388,21 @@ export default {
     // );
   },
   methods: {
+
+    openEmail(email) {
+    window.location.href = `mailto:${email}`;
+  },
+
+  async copyEmail(email) {
+    try {
+      await navigator.clipboard.writeText(email);
+      this.errorMessage = "Email copied to clipboard!";
+      setTimeout(() => (this.errorMessage = ""), 1500);
+    } catch (e) {
+      console.error("Copy failed", e);
+    }
+    },
+  
     acceptCookies() {
   localStorage.setItem("cookiesAccepted", "true");
   this.showCookies = false;
@@ -585,12 +645,13 @@ display: flex!important;
 
 .contactBox {
   display: flex!important;
-  flex-flow: row!important;
+  flex-flow: column!important;
   justify-content: space-evenly!important;
   height: 100%!important;
   opacity: 0.8!important;
   border-radius: 20px!important;
-  width: 70%!important;
+  width: 100%!important;
+  position: relative;
 }
 
 /* background-color: #eef3f8 !important;
@@ -910,5 +971,100 @@ form {
   width: 100%!important;
   justify-content: flex-end!important;
   align-items: center!important;
+}
+
+#info, #davor, #karlo, #ivan {
+  opacity: 1!important;
+  display: flex;
+  flex-flow: row;
+  color: #001f3f!important;
+  text-decoration: none!important;
+  font-size: 22px;
+  width: 100%;
+}
+
+.emails {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.emails a {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+
+  color: #001f3f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.emails a span {
+  text-decoration: underline;
+}
+
+.email-grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.email-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 14px;
+
+  border: 1px solid rgba(0, 31, 63, 0.15);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+  width: 100%;
+}
+
+.email-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 31, 63, 0.15);
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #001f3f;
+}
+
+.label {
+  flex: 1;
+  color: #001f3f;
+  font-weight: 500;
+}
+
+.copy {
+  position: relative;
+  background: transparent;
+  border: 1px solid #001f3f;
+  color: #001f3f;
+
+  padding: 4px 10px;
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+  left: 10px;
+}
+
+.copy:hover {
+  background: #001f3f;
+  color: white;
 }
 </style>

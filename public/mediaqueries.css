@@ -96,6 +96,12 @@ ul.p li {
     height: 50px;
   }
 
+  .email-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 }
 
 @media (min-width: 481px) {
@@ -175,6 +181,12 @@ ul.p li {
     height: 100px;
   }
 
+  .email-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 }
 
 @media (min-width: 601px) {
@@ -249,6 +261,11 @@ ul.p li {
     height: 50px;
   }
 
+  .email-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 }
 
 @media (min-width: 769px) {
@@ -353,4 +370,10 @@ ul.p li {
   .carousel {
      height: 0px;
   }
+
+  .email-grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 }

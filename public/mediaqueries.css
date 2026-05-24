@@ -23,11 +23,11 @@ body {
   .p1,
   .p2 {
     font-size: 15px!important;
-    line-height: 25px;
+    line-height: 25px!important;
   }
 
   p {
-    font-size: 15px;
+    font-size: 15px!important;
 }
 
   form {
@@ -46,7 +46,7 @@ body {
   button {
     width: 92%;
     color: #001f3f;
-    height: 20px;
+    height: 36px!important;
 }
 
 #send {
@@ -144,7 +144,7 @@ a {
 }
 
 .email-card {
-    width: 92%;
+    width: 92%!important;
 }
 
 .copy {
@@ -410,6 +410,16 @@ ul.p li {
     font-size: 55px!important;
   }
 
+  p {
+    color: #001f3f;
+    font-size: 20px !important;
+    font-family: "Montserrat", sans-serif;
+    /* line-height: 50px !important; */
+    width: 70% !important;
+    text-align: center !important;
+    opacity: 1 !important;
+}
+
   form {
     width: 100%;
   }
@@ -422,12 +432,16 @@ ul.p li {
     height: 100%!important;
 }
 
-.p1{
-  font-size:25px!important;
-}
+.p1 {
+    color: #001f3f;
+    font-size: 25px !important;
+    font-family: "Montserrat", sans-serif;
+    line-height: 50px !important;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #001, 0 0 9px #001f, 0 0 14px #001f3f;
 
 ul.p li {  
     font-size: 16px!important;
+}
 }
 
 .carousel-item {
@@ -455,5 +469,54 @@ ul.p li {
   margin-right: 10px;
   color: #001f3f;
   width: 13%;
+}
+
+textarea {
+  width: 97%;
+}
+
+.list {
+    display: flex;
+    flex-flow: column;
+    height: 100% !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+
+}
+
+ul.p li {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.3s ease;
+    border: 1px solid #001f3f;
+    font-size: 16px !important;
+    opacity: 0.9;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#form {
+    display: flex !important;
+    flex-flow: column !important;
+    justify-content: space-evenly !important;
+    width: 500px !important;
+    /* height: 550px !important; */
+}
+
+.label {
+    font-size: 18px;
+    color: #001f3f;
+    font-family: "Montserrat", sans-serif;
+}
+
+.icon {
+    font-size: 20px;
+    color: #001f3f;
 }
 }

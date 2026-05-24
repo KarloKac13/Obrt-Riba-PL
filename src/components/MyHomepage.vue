@@ -94,20 +94,25 @@
         <div style="display: flex; justify-content: center; width:100%; flex-wrap: wrap;">
   <p>Kontaktirajte nas direktno:</p>
 
-<div style="display: flex; flex-flow: row; justify-content: flex-start; align-items: center;">
+<div style="display: flex; flex-flow: row; justify-content: flex-start; align-items: center; width: 100%; gap: 20px;">
  <div class="emails">
 
   <div class="email-grid">
-  <div style="display: flex; flex-flow: column; align-items: center;">
+  <div style="display: flex; flex-flow: column; align-items: center; width: 100%;">
     <div class="email-card" @click="openEmail('info@rpl.com')">
       <span class="icon">✉</span>
       <span class="label">info@rpl.com</span>
-      <button class="copy" @click.stop="copyEmail('info@rpl.com')">
-        Kopiraj
-      </button>
-       <span class="icon">📞</span>
-      <span class="label">+385 97 794 7589</span>
     </div>
+    <button class="copy" @click.stop="copyEmail('info@rpl.com')">
+        Kopiraj email
+      </button>
+      <div style="display: flex; flex-flow: row; justify-content: flex-end; align-items: center; width: 90%; flex-wrap: wrap;">
+        <span class="icon">📞</span>
+        <span href="tel:+385977947589" class="label">+385 97 794 7589</span>
+      </div>
+      <button class="copy" @click.stop="copyPhone('+385977947589')">
+    Kopiraj broj
+  </button>
 
     <!-- <div class="email-card" @click="openEmail('davor@rpl.com')">
       <span class="icon">✉</span>
@@ -151,7 +156,7 @@
 </div>
     </div>
   </div>
-  <div style="display: flex; justify-content: center; width: 100%">
+  <div style="display: flex; justify-content: center; width: 100% ">
     <p :class="{ opacityVisible: pageLoaded }" class="opacity">Klikom na logotipe naših klijenata, saznajte što oni mogu učiniti za Vas!</p>
   </div>
   <div class="carousel-wrapper">
@@ -390,6 +395,15 @@ export default {
     // );
   },
   methods: {
+  async copyPhone(number) {
+  try {
+    await navigator.clipboard.writeText(number);
+    this.errorMessage = "Broj kopiran!";
+    setTimeout(() => (this.errorMessage = ""), 1500);
+  } catch (e) {
+    console.error("Copy failed", e);
+  }
+},
 
     openEmail(email) {
     window.location.href = `mailto:${email}`;
@@ -552,7 +566,7 @@ goToSlide(index) {
 <style>
 p {
   color: #001f3f;
-  font-size: 20px;
+  font-size: 20px!important;
   font-family: "Montserrat", sans-serif;
   /* line-height: 50px!important; */
   width: 70%!important;
@@ -562,10 +576,9 @@ p {
 
 .p1 {
   color: #001f3f;
-  font-size: 25px!important;
-  /* font-size: 55px!important; */
+  font-size: 55px!important;
   font-family: "Montserrat", sans-serif;
-  line-height: 50px;
+  line-height: 50px!important;
   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #001,
     0 0 9px #001f, 0 0 14px #001f3f;
 }
@@ -728,7 +741,7 @@ ul.p li:nth-child(even) {
 
 button {
   color: #001f3f;
-  height: 30px;
+  height: 30px!important;
 }
 
 input {
@@ -762,7 +775,7 @@ textarea:focus {
   border-color: #001f3f;
 }
 
-form {
+#form {
   display: flex!important;
   flex-flow: column!important;
   justify-content: space-evenly!important;
@@ -1031,7 +1044,7 @@ form {
   cursor: pointer;
 
   transition: 0.25s ease;
-  width: 100%;
+  width: 100%!important;
 }
 
 .email-card:hover {
@@ -1053,19 +1066,21 @@ form {
 }
 
 .copy {
-  position: relative;
-  background: transparent;
-  border: 1px solid #001f3f;
-  color: #001f3f;
+  top: 0px!important;
+  position: relative!important;
+  background: transparent!important;
+  border: 1px solid #001f3f!important;
+  color: #001f3f!important;
 
-  padding: 4px 10px;
-  border-radius: 8px;
+  padding: 4px 10px!important;
+  border-radius: 8px!important;
 
-  font-size: 12px;
+  font-size: 12px!important;
 
-  cursor: pointer;
-  transition: 0.2s ease;
-  left: 10px;
+  cursor: pointer!important;
+  transition: 0.2s ease!important;
+  left: 10px!important;
+  width: 50%;
 }
 
 .copy:hover {

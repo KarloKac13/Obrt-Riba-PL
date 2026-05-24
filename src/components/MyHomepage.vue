@@ -902,76 +902,49 @@ textarea:focus {
 }
 
 .cookie-bar {
-  position: fixed;
-  pointer-events: auto;
-  bottom: 20px;
-  left: 50%;
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 
-  transform: translateX(-50%);
+  width: min(720px, 92%) !important;
+  padding: 14px 16px !important;
 
-  width: 90%;
-  max-width: 700px;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 31, 63, 0.15) !important;
+  border-radius: 14px !important;
 
-  background: rgba(255, 255, 255, 0.95);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
 
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(0, 31, 63, 0.12);
-
-  border-radius: 18px;
-
-  padding: 16px 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-
-  z-index: 9999;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.12),
-    0 20px 60px rgba(0,31,63,0.10);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
+  z-index: 9999 !important;
 }
 
 .cookie-bar p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #001f3f;
-
-  margin: 0;
-  text-align: left;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  color: #001f3f !important;
+  text-align: left !important;
+  flex: 1 !important;
 }
 
 .cookie-bar button {
-  background: #001f3f;
-  color: white;
+  background: #001f3f !important;
+  color: white !important;
 
-  border: none;
+  border: none !important;
+  border-radius: 10px !important;
 
-  min-width: 90px;
-  height: auto;
+  padding: 10px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
 
-  padding: 12px 18px;
-
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  transition: 0.25s ease;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 600;
-
-  flex-shrink: 0;
-}
-
-.cookie-bar button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+  cursor: pointer !important;
+  width: auto !important;
 }
 
 .opacityVisible {

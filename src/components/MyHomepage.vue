@@ -601,6 +601,7 @@ p {
   flex-flow: row!important;
   width: 65%;
   justify-content: start!important;
+  height: 15%;
 }
 
 .navBar {

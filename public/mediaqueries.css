@@ -100,6 +100,13 @@ ul.p li {
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 12px;
+    color: #001f3f;
+    width: 100%;
 }
 
 }
@@ -185,6 +192,13 @@ ul.p li {
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 18px;
+    color: #001f3f;
+    width: 100%;
 }
 
 }
@@ -265,6 +279,12 @@ ul.p li {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #001f3f;
 }
 }
 
@@ -375,5 +395,13 @@ ul.p li {
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #001f3f;
+  width: 13%;
 }
 }

@@ -91,7 +91,7 @@
             {{ errorMessage }}
           </p>
         </form>
-        <div>
+        <div style="display: flex; justify-content: center; width:80%;">
   <p>Kontaktirajte nas direktno:</p>
 
 <div style="display: flex; flex-flow: row; justify-content: flex-start; align-items: center;">
@@ -105,18 +105,20 @@
       <button class="copy" @click.stop="copyEmail('info@rpl.com')">
         Kopiraj
       </button>
+       <span class="icon">📞</span>
+      <span class="label">+385 97 794 7589</span>
     </div>
 
-    <div class="email-card" @click="openEmail('davor@rpl.com')">
+    <!-- <div class="email-card" @click="openEmail('davor@rpl.com')">
       <span class="icon">✉</span>
       <span class="label">davor@rpl.com</span>
       <button class="copy" @click.stop="copyEmail('davor@rpl.com')">
          Kopiraj
       </button>
-    </div>
+    </div> -->
     </div>
 
-  <div style="display: flex; flex-flow: column; align-items: center;">
+  <!-- <div style="display: flex; flex-flow: column; align-items: center;">
     <div class="email-card" @click="openEmail('karlo@rpl.com')">
       <span class="icon">✉</span>
       <span class="label">karlo@rpl.com</span>
@@ -132,7 +134,7 @@
          Kopiraj
       </button>
     </div>
-    </div>
+    </div> -->
   </div>
 </div></div>
       </div></div>
@@ -1009,12 +1011,14 @@ form {
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: center;
 }
 
 .email-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   padding: 12px 14px;
 
@@ -1039,6 +1043,7 @@ form {
   font-size: 18px;
   margin-right: 10px;
   color: #001f3f;
+  width: 20%;
 }
 
 .label {

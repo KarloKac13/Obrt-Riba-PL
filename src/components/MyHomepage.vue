@@ -19,17 +19,17 @@
 
     <div class="list ">
     <ul class="p">
-      <li>Želite veći outreach? Pošaljite nam upit.</li>
-      <li>Želite više klijenata? Pošaljite nam upit.</li>
-      <li>Trebate ponudu? Pošaljite nam upit.</li>
-      <li>Imate ideju koju želite realizirati? Pošaljite nam upit.</li>
-      <li>Niste sigurni odakle krenuti? Pošaljite nam upit.</li>
-      <li>Želite unaprijediti svoj brend ili poslovanje? Pošaljite nam upit.</li>
-      <li>Trebate savjet, suradnju ili novu priliku? Pošaljite nam upit.</li>
+      <li>Želite veći outreach? Pošaljite nam upit!</li>
+      <li>Želite više klijenata? Pošaljite nam upit!</li>
+      <li>Trebate ponudu? Pošaljite nam upit!</li>
+      <li>Imate ideju koju želite realizirati? Pošaljite nam upit!</li>
+      <li>Niste sigurni odakle krenuti? Pošaljite nam upit!</li>
+      <li>Želite unaprijediti svoj brend ili poslovanje? Pošaljite nam upit!</li>
+      <li>Trebate savjet, suradnju ili novu priliku? Pošaljite nam upit!</li>
     </ul>
     <p class="p1">
       Za sve što vam padne na pamet — slobodno nam se javite.
-      Ne postoje kriva pitanja, postoje samo propuštene prilike.
+      Ne postoje kriva pitanja, postoje samo propuštene prilike!
     </p>
     </div>
     <!-- <div
@@ -52,6 +52,7 @@
             Pošaljite nam upit!
           </p>
           <input
+            id="name"
             autocomplete="on"
             v-model="form.name"
             type="text"
@@ -59,6 +60,7 @@
             required
           />
           <input
+            id="email"
             autocomplete="on"
             v-model="form.email"
             type="email"

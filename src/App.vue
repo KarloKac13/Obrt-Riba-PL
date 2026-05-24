@@ -1,7 +1,7 @@
 <template>
   <video :key="backgroundMirror" autoplay loop muted :class="{mirrored: backgroundMirror}">
     <source
-      src="https://res.cloudinary.com/djb4cocmv/video/upload/v1701787664/Portfolio/Naslovna%20slika-video/vidback_furg7j.mp4"
+      src="/companyImages/vidback_furg7j.mp4"
       type="video/mp4"
       alt=""
     />

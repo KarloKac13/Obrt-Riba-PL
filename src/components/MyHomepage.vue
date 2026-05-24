@@ -83,7 +83,7 @@
     Slažem se s obradom osobnih podataka u svrhu odgovora na upit.
   </label>
 </div>
-          <button :disabled="loading" type="submit">
+          <button id="send" :disabled="loading" type="submit">
             {{ loading ? "Slanje..." : "Pošalji nam poruku" }}
           </button>
 
@@ -91,7 +91,7 @@
             {{ errorMessage }}
           </p>
         </form>
-        <div style="display: flex; justify-content: center; width:80%;">
+        <div style="display: flex; justify-content: center; width:100%; flex-wrap: wrap;">
   <p>Kontaktirajte nas direktno:</p>
 
 <div style="display: flex; flex-flow: row; justify-content: flex-start; align-items: center;">

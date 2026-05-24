@@ -90,7 +90,7 @@ a:hover {
 }
 
 img {
-  height: 250px;
-  width: 375px;
+  max-width: 100%;
+  height: auto;
 }
 </style>

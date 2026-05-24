@@ -1,7 +1,7 @@
 <template>
   <base-card :navLinks="navLinks" @changeComp="changeComp" />
-  <div style="display: flex; justify-content: evenly">
-    <div
+  <div style="display: flex; justify-content:space-evenly">
+    <!-- <div
       v-bind="$attrs"
       style="width: 100%"
       :class="{ descriptionContentReverse: this.backgroundMirror }"
@@ -15,6 +15,22 @@
         :class="['typeMe2', 'p2', { color2: this.backgroundMirror }]"
         id="typeMe2"
       ></p>
+    </div> -->
+
+    <div class="list ">
+    <ul class="p">
+      <li>Želite veći outreach? Pošaljite nam upit.</li>
+      <li>Želite više klijenata? Pošaljite nam upit.</li>
+      <li>Trebate ponudu? Pošaljite nam upit.</li>
+      <li>Imate ideju koju želite realizirati? Pošaljite nam upit.</li>
+      <li>Niste sigurni odakle krenuti? Pošaljite nam upit.</li>
+      <li>Želite unaprijediti svoj brend ili poslovanje? Pošaljite nam upit.</li>
+      <li>Trebate savjet, suradnju ili novu priliku? Pošaljite nam upit.</li>
+    </ul>
+    <p class="p1">
+      Za sve što vam padne na pamet — slobodno nam se javite.
+      Ne postoje kriva pitanja, postoje samo propuštene prilike.
+    </p>
     </div>
     <!-- <div
     style="
@@ -86,8 +102,8 @@
 </div>
     </div>
   </div>
-  <div>
-    <p>Klikom na logotipe naših klijenata, saznajte što oni mogu učiniti za Vas!</p>
+  <div style="display: flex; justify-content: center; width: 100%">
+    <p :class="{ opacityVisible: pageLoaded }" class="opacity">Klikom na logotipe naših klijenata, saznajte što oni mogu učiniti za Vas!</p>
   </div>
   <div class="carousel-wrapper">
     <div class="carousel">
@@ -184,14 +200,24 @@ export default {
       companies,
 
       showCookies: true,
+
+      pageLoaded: false,
     };
   },
 
   beforeUnmount() {
     clearInterval(this.autoPlay);
+
+    window.removeEventListener("resize", this.animateCarousel);
   },
 
   mounted() {
+     window.addEventListener("load", () => {
+    this.pageLoaded = true;
+     });
+
+     window.addEventListener("resize", this.animateCarousel);
+
     if (localStorage.getItem("cookiesAccepted")) {
   this.showCookies = false;
 }
@@ -271,48 +297,48 @@ export default {
     //     animate();
 
     this.$nextTick(() => {
-    this.animateCarousel();
+  this.animateCarousel();
 
-    this.autoPlay = setInterval(() => {
-      this.nextSlide();
-    }, 3000);
-  });
+  this.autoPlay = setInterval(() => {
+    this.nextSlide();
+  }, 3000);
+});
 
 
-    const textElement = document.querySelector(".typeMe");
-    const text2Element = document.querySelector(".typeMe2");
+    // const textElement = document.querySelector(".typeMe");
+    // const text2Element = document.querySelector(".typeMe2");
 
-    textElement.innerHTML = "Where sales and";
-    text2Element.innerHTML = "supply meet profit";
+    // textElement.innerHTML = "Where sales and";
+    // text2Element.innerHTML = "supply meet profit";
 
-    const timeline = gsap.timeline();
+    // const timeline = gsap.timeline();
 
-    // TEXT 1 FROM LEFT
-    timeline.fromTo(
-      textElement,
-      {
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 0.8,
-        duration: 0.6,
-      },
-    );
+    // // TEXT 1 FROM LEFT
+    // timeline.fromTo(
+    //   textElement,
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     x: 0,
+    //     opacity: 0.8,
+    //     duration: 0.6,
+    //   },
+    // );
 
-    // TEXT 2 FROM RIGHT
-    timeline.fromTo(
-      text2Element,
-      {
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 0.7,
-        duration: 0.6,
-        onComplete: this.onAnimationComplete,
-      },
-    );
+    // // TEXT 2 FROM RIGHT
+    // timeline.fromTo(
+    //   text2Element,
+    //   {
+    //     opacity: 0,
+    //   },
+    //   {
+    //     x: 0,
+    //     opacity: 0.7,
+    //     duration: 0.6,
+    //     onComplete: this.onAnimationComplete,
+    //   },
+    // );
   },
   methods: {
     acceptCookies() {
@@ -322,27 +348,28 @@ export default {
 
    animateCarousel() {
   const items = document.querySelectorAll(".carousel-item");
-  const total = this.companies.length;
+     const total = this.companies.length;
+  
 
-  const spacing = 220;
-  const centerX = 0;
+  const spacing = Math.max(60, window.innerWidth * 0.22);
 
   items.forEach((item, i) => {
+    // IMPORTANT: ensure proper centering anchor once
+    gsap.set(item, {
+      xPercent: -50,
+      yPercent: -50
+    });
+
     let offset = i - this.currentIndex;
 
-    // stable circular wrap
     if (offset > total / 2) offset -= total;
     if (offset < -total / 2) offset += total;
 
-    const x = centerX + offset * spacing;
-
     gsap.to(item, {
-      x,
-      y: 0,
-      scale: offset === 0 ? 1.2 : 0.85,
-      opacity: Math.abs(offset) > 3 ? 0 : 1,
+      x: offset * spacing,
+      scale: offset === 0 ? 0.85 : 0.85,
+      opacity: Math.abs(offset) > 2 ? 0 : 1,
       zIndex: 1000 - Math.abs(offset),
-
       duration: 0.6,
       ease: "power2.out",
       overwrite: true
@@ -418,6 +445,8 @@ goToSlide(index) {
     async onAnimationComplete() {
       await nextTick();
 
+       this.pageLoaded = true;
+
       const anchorEl = document.querySelectorAll("a");
 
       const timeline = gsap.timeline();
@@ -459,16 +488,18 @@ goToSlide(index) {
 <style>
 p {
   color: #001f3f;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
-  line-height: 50px!important;
-  width: 100%!important;
+  /* line-height: 50px!important; */
+  width: 70%!important;
   text-align: center!important;
+  opacity: 1!important;
 }
 
 .p1 {
   color: #001f3f;
-  font-size: 55px!important;
+  font-size: 25px!important;
+  /* font-size: 55px!important; */
   font-family: "Montserrat", sans-serif;
   line-height: 50px;
   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #001,
@@ -576,6 +607,60 @@ border: 1px solid rgba(0, 31, 63, 0.08) !important;
   opacity: 0.7;
 }
 
+ul.p {
+  display: flex;
+  flex-flow: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  text-align: center;
+  height: 70%;
+  justify-content: center;
+}
+
+ul.p li {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease;
+  border: 1px solid #001f3f;
+  font-size: 16px!important;
+  opacity: 0.9;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* ODD */
+ul.p li:nth-child(odd) {
+  background: #001f3f;
+  color: white;
+}
+
+/* EVEN */
+ul.p li:nth-child(even) {
+  background: white;
+  color: #001f3f;
+}
+
+/* Hover */
+ul.p li:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px #001f3f
+    0 4px 10px #001f3f;
+}
+
+ul.p li:nth-child(even) {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+}
+
 button {
   color: #001f3f;
   height: 30px;
@@ -677,25 +762,17 @@ form {
 
 .carousel-wrapper {
   width: 100%;
-  height: 250px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  overflow: hidden;
-
-  position: relative;
+  overflow: visible;
 }
 
 .carousel {
+  width: 100%;
+  height: 0%;  
   position: relative;
-
-  width: 800px;
-  height: 200px;
-
-  margin: 0 auto;
-
+  overflow: visible;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -703,14 +780,13 @@ form {
 
 .carousel-item {
   position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -818,5 +894,19 @@ form {
 .cookie-bar button:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+.opacityVisible {
+  opacity: 1 !important;
+  height: 20px;
+}
+
+.list {
+  display: flex;
+  flex-flow: column;
+  height: 100%!important;
+  width: 100%!important;
+  justify-content: flex-end!important;
+  align-items: center!important;
 }
 </style>

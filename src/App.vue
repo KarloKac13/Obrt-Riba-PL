@@ -57,4 +57,41 @@ video {
   transform: scaleX(-1)!important;
   transform-origin: center!important;
 }
+
+/* App.vue <style> */
+
+.navBar a,
+.navBarContainer a,
+nav a {                          /* add this as a fallback */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001f3f !important;
+  font-family: "Montserrat", sans-serif;
+  padding: 8px 20px;
+  border: 1.5px solid rgba(0, 31, 63, 0.25);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  opacity: 1 !important;
+   font-size: 20px!important;             /* fights the p:not(:first-child) bleed */
+}
+
+.navBar a:hover,
+.navBarContainer a:hover,
+nav a:hover {
+  background: #001f3f !important;
+  color: white !important;
+  border-color: #001f3f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 31, 63, 0.18);
+}
+
+.navBar a.router-link-active,
+.navBarContainer a.router-link-active,
+nav a.router-link-active {
+  background: #001f3f !important;
+  color: white !important;
+  border-color: #001f3f;
+}
 </style>

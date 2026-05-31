@@ -181,7 +181,7 @@ export default {
 /* unchanged */
 </style>
 
-<style>
+<style scoped>
 
 .top, .bottom, .top2, .bottom2 {
   display: flex;
@@ -212,7 +212,7 @@ box-shadow:
   transition: all 0.25s ease;
 }
 
-#top:hover, #bottom:hover, #top2:hover, #bottom2:hover {
+.top:hover, .bottom:hover, .top2:hover, .bottom2:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.10);
   background: rgba(0, 31, 63, 0.06);
@@ -231,7 +231,11 @@ box-shadow:
   width: 70%;
 }
 
-p:not(:first-child) {
+/* AFTER — scoped to cards only */
+.top p:not(:first-child),
+.bottom p:not(:first-child),
+.top2 p:not(:first-child),
+.bottom2 p:not(:first-child) {
   opacity: 0;
 }
 

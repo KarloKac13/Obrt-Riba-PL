@@ -12,7 +12,12 @@ body {
     flex-flow: row !important;
     width: 65%;
     height: 0%;
-    justify-content: start !important;
+  }
+
+  .mobileStyle {
+    display: flex!important;
+    align-items: center!important;
+    flex-flow: column!important;
   }
 
   .navBar {
@@ -21,6 +26,24 @@ body {
     justify-content: space-between !important;
     height: 100px;
   }
+
+  /* Scope to nav only — don't override all anchors */
+.navBar a,
+.navBarContainer a {
+  padding: 6px 12px;
+  border: 1.5px solid rgba(0, 31, 63, 0.25);
+  border-radius: 10px;
+  color: #001f3f;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  opacity: 1 !important;
+  font-size: 20px!important;
+}
 
   img {
     height: 150px;
@@ -40,14 +63,6 @@ body {
   form {
     width: 100px;
     height: 550px;
-  }
-
-  input {
-    width: 92%;
-  }
-
-  textarea {
-    width: 92%;
   }
 
   button {
@@ -141,7 +156,6 @@ ul.p li {
     flex-flow: column;
     height: 100% !important;
     width: 100% !important;
-    justify-content: center !important;
     align-items: center !important;
 
 }
@@ -189,6 +203,12 @@ a {
     flex-direction: column!important;
   }
 
+  .navBar a,
+.navBarContainer a {
+  font-size: 14px;
+  padding: 7px 14px;
+}
+
   .p1,
   .p2 {
     font-size: 20px!important;
@@ -234,7 +254,7 @@ ul.p {
     margin: 0;
     width: 70%;
     text-align: center;
-    height: 55%;
+    height: 50%;
     justify-content: center;
 }
 
@@ -321,7 +341,7 @@ ul.p li {
     margin: 0;
     width: 70%;
     text-align: center;
-    height: 55%;
+    height: 60%;
     justify-content: center;
 }
 
@@ -339,7 +359,8 @@ ul.p li {
 
   .carousel-item {
     width: 100px;
-    height: 50px;
+    height: 100px;
+    top: 40%;
   }
 
   .email-grid {
@@ -353,6 +374,14 @@ ul.p li {
     margin-right: 10px;
     color: #001f3f;
 }
+
+.mobileStyle {
+        display: flex !important;
+        align-items: center !important;
+        flex-flow: column !important;
+        justify-content: space-between;
+    }
+
 }
 
 @media (min-width: 769px) {
@@ -401,6 +430,12 @@ ul.p li {
     height: 100px;
   }
 
+  .mobileStyle {
+    display: flex!important;
+    align-items: center!important;
+    flex-flow: column!important;
+  }
+
 }
 
 @media (min-width: 1025px) {
@@ -410,6 +445,12 @@ ul.p li {
     flex-wrap: wrap!important;
     justify-content: space-evenly !important;
   }
+
+  .navBar a,
+.navBarContainer a {
+  font-size: 15px;
+  padding: 8px 20px;
+}
 
   .carousel-item img {
     width: 150px;
@@ -537,4 +578,12 @@ ul.p li {
     font-size: 20px;
     color: #001f3f;
 }
+
+.mobileStyle {
+    display: flex !important;
+    align-items: center !important;
+    flex-flow: row !important;
+    justify-content: space-between !important;
+}
+
 }

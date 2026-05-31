@@ -1,6 +1,6 @@
 <template>
   <base-card :navLinks="navLinks" @changeComp="changeComp" />
-  <div style="display: flex; justify-content:space-evenly">
+  <div class="mobileStyle">
     <!-- <div
       v-bind="$attrs"
       style="width: 100%"
@@ -1076,4 +1076,11 @@ textarea:focus {
 .phone-link:hover {
   text-decoration: underline;
 }
+
+.mobileStyle {
+    display: flex!important;
+    align-items: center!important;
+    flex-flow: row!important;
+    justify-content: space-between!important;
+  }
 </style>

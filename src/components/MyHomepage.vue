@@ -616,6 +616,15 @@ p {
   justify-content: space-evenly!important;
 }
 
+.nav-left,
+.nav-right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+  z-index: 2;
+}
+
 .descriptionContent {
   display: flex!important;
   flex-flow: column!important;

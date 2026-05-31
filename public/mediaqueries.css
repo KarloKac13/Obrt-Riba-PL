@@ -10,7 +10,7 @@ body {
   .navBarContainer {
     display: flex !important;
     flex-flow: row !important;
-    width: 65%;
+    width: 100%;
     height: auto;
   }
 
@@ -21,7 +21,7 @@ body {
   }
 
   .navBar {
-    flex-direction: column!important;
+    flex-direction: row!important;
     flex-wrap: wrap!important;
     justify-content: space-between !important;
     height: 100px;
@@ -46,8 +46,8 @@ body {
 }
 
   img {
-    height: 150px;
-    width: 275px;
+    height: 70px;
+    width: 175px;
   }
 
   .p1,
@@ -206,8 +206,8 @@ a {
 }
 
   img {
-    height: 250px;
-    width: 375px;
+    height: 150px;
+    width: 325px;
   }
 
   .navBarContainer {
@@ -461,7 +461,8 @@ ul.p li {
   .navBarContainer {
     display: flex !important;
     flex-flow: row !important;
-    width: 65%;
+    width: 100%;
+    flex-wrap: wrap!important;
     height: auto;
     justify-content: start !important;
   }
@@ -527,8 +528,8 @@ ul.p li {
 }
 
   img {
-    height: 250px;
-    width: 375px;
+    height: 200px;
+    width: 350px;
   }
 
   .p1,
@@ -661,6 +662,15 @@ ul.p li {
 
 .navBarContainer { 
   height: auto; 
+  width: 100%;
 } 
+
+.kontaktCenter {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%!important;
+}
 
 }

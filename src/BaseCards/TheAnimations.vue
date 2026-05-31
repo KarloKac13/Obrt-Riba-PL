@@ -88,15 +88,31 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
         </div>
       </div>  
 
-      <!-- OGLASI -->
+      <!-- Kontakt -->
       <div v-else-if="cleanPage === 'kontakt'">
 
-        <div class="paragraphCenter ">
-          <p class="top paragraphCenter">
+        <div class="kontaktCenter ">
+          <p class="top kontaktCenter">
             <span class="section-title">Kontakt</span>
-            ...
+            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+              <span class="icon">✉</span>
+              <span class="label">info@rpl.com</span>
+            </span>
+            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+              <span class="icon">✉</span>
+              <span class="label">davor@rpl.com</span>
+            </span>
+            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+              <span class="icon">✉</span>
+              <span class="label">karlo@rpl.com</span>
+            </span>
+            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+              <span class="icon">✉</span>
+              <span class="label">ivan@rpl.com</span>
+            </span>
           </p>
         </div>
+        
       </div>  
 
       <!-- PROJEKTI -->
@@ -322,6 +338,13 @@ box-shadow:
   margin-right: 8px; /* Adds spacing between the checkmark and text */
 }
 
+.kontaktCenter {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%!important;
+}
 </style>
 
 

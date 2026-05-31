@@ -1,14 +1,34 @@
 <template>
   <div class="navBarContainer">
     <div class="navBar">
-      <router-link
-        v-for="link in filteredLinks"
-        :key="link.to"
-        :to="link.to"
-      >
-        {{ link.label }}
-      </router-link>
-      <img src="/companyImages/Ribaprofitlablogo.png" />
+
+      <!-- LEFT -->
+      <div class="nav-left">
+        <router-link
+          v-for="link in leftLinks"
+          :key="link.to"
+          :to="link.to"
+        >
+          {{ link.label }}
+        </router-link>
+      </div>
+
+      <!-- CENTER LOGO -->
+      <div class="logo">
+        <img src="/companyImages/Ribaprofitlablogo.png" />
+      </div>
+
+      <!-- RIGHT -->
+      <div class="nav-right">
+        <router-link
+          v-for="link in rightLinks"
+          :key="link.to"
+          :to="link.to"
+        >
+          {{ link.label }}
+        </router-link>
+      </div>
+
     </div>
   </div>
 </template>
@@ -41,8 +61,24 @@ export default {
 
   computed: {
     filteredLinks() {
-      return this.links.filter(link => link.to !== this.$route.path);
-    },
+    return this.links.filter(
+      link => link.to !== this.$route.path
+    );
+  },
+
+  leftLinks() {
+    return this.filteredLinks.filter(
+      link =>
+        !["/oglasi", "/kontakt"].includes(link.to)
+    );
+  },
+
+  rightLinks() {
+    return this.filteredLinks.filter(
+      link =>
+        ["/oglasi", "/kontakt"].includes(link.to)
+    );
+  },
 
     cleanPage() {
     return this.currentPage?.replace("/", "");

@@ -77,6 +77,28 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
 
       </div>
 
+        <!-- OGLASI -->
+      <div v-else-if="cleanPage === 'oglasi'">
+
+        <div class="paragraphCenter ">
+          <p class="top paragraphCenter">
+            <span class="section-title">Oglasi</span>
+            ...
+          </p>
+        </div>
+      </div>  
+
+      <!-- OGLASI -->
+      <div v-else-if="cleanPage === 'kontakt'">
+
+        <div class="paragraphCenter ">
+          <p class="top paragraphCenter">
+            <span class="section-title">Kontakt</span>
+            ...
+          </p>
+        </div>
+      </div>  
+
       <!-- PROJEKTI -->
       <div v-else-if="cleanPage === 'projekti'">
 
@@ -86,7 +108,6 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
             ...
           </p>
         </div>
-
       </div>
     </div>
 </div>
@@ -111,6 +132,7 @@ export default {
         { label: "O nama", path: "o-nama" },
         { label: "Usluge", path: "usluge" },
         { label: "Projekti", path: "projekti" },
+        { label: "Oglasi", path: "oglasi" },
       ],
     };
   },

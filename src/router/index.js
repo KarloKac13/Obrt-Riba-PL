@@ -3,7 +3,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../components/MyHomepage.vue";
 import AboutMe from "../components/AboutMe.vue";
 import Projects from "../components/MyProjects.vue";
-import Usluge from "../components/ContactMe.vue";
+import Usluge from "../components/TheServices.vue";
+import TheMarketing from "../components/TheMarketing.vue";
+import OurContact from "../components/OurContact.vue";
 import "/public/mediaqueries.css";
 
 const routes = [
@@ -26,11 +28,23 @@ const routes = [
     meta: { mirror: false },
   },
   {
+    path: "/oglasi",
+    name: "oglasi",
+    component: TheMarketing,
+    meta: { mirror: false },
+  },
+  {
     path: "/projekti",
     name: "projekti",
     component: Projects,
     meta: { mirror: false },
   },
+  {
+    path: "/kontakt",
+    name: "kontakt",
+    component: OurContact,
+    meta: { mirror: false },
+  }
 ];
 
 const router = createRouter({

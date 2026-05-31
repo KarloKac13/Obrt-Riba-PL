@@ -236,6 +236,8 @@ export default {
         { label: "O nama", component: "about-me" },
         { label: "Usluge", component: "the-services" },
         { label: "Projekti", component: "the-projects" },
+        { label: "Oglasi", component: "the-marketing" },
+        { label: "Kontakt", component: "our-contact" },
       ],
 
       form: {

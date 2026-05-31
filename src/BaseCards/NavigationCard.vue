@@ -33,6 +33,8 @@ export default {
         { to: "/o-nama", label: "O nama" },
         { to: "/usluge", label: "Usluge" },
         { to: "/projekti", label: "Projekti" },
+        { to: "/oglasi", label: "Oglasi" },
+        { to: "/kontakt", label: "Kontakt" },
       ],
     }
   },

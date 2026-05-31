@@ -89,26 +89,41 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
       </div>  
 
       <!-- Kontakt -->
-      <div v-else-if="cleanPage === 'kontakt'">
+      <div style="width: 50%" v-else-if="cleanPage === 'kontakt'">
 
         <div class="kontaktCenter ">
           <p class="top kontaktCenter">
-            <span class="section-title">Kontakt</span>
-            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+            <span class="section-title">Kontakti</span>
+            <span style="width: 100%; display: flex; flex-flow: column; align-items: center; justify-content: center;">
+              <span class="label">Info</span>
+              <span style=" text-align: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span class="label">info@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('info@rpl.com')">info@rpl.com</span>
+              </span>
             </span>
-            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+            <br>
+            <span style="width: 100%: left; display: flex; flex-flow: column; align-items: center; justify-content: center;">
+              <span class="label">Davor Ribarić</span>
+              <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span class="label">davor@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('davor@rpl.com')">davor@rpl.com</span>
+              </span>
             </span>
-            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+            <br>
+            <span style="width: 100%: left; display: flex; flex-flow: column; align-items: center; justify-content: center;">
+              <span class="label">Karlo Manojlović</span>
+              <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span class="label">karlo@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('karlo@rpl.com')">karlo@rpl.com</span>
+              </span>
             </span>
-            <span style="text-align: left; display: flex; align-items: center; justify-content: center;">
+            <br>
+            <span style="width: 100%: left; display: flex; flex-flow: column; align-items: center; justify-content: center;">
+              <span class="label">Ivan Ribarić</span>
+              <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span class="label">ivan@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('ivan@rpl.com')">ivan@rpl.com</span>
+              </span>
             </span>
           </p>
         </div>
@@ -188,12 +203,17 @@ export default {
   },
 
   methods: {
+
+  openEmail(email) {
+    window.location.href = `mailto:${email}`;
+    },
+  
     runAnimation() {
       const el = document.querySelector(".page-wrapper");
       if (!el) return;
 
       const items = el.querySelectorAll(".top, .bottom, .top2, .bottom2");
-      if (!top) return;
+      if (!items.length) return;
 
       gsap.fromTo(
   items,
@@ -248,6 +268,7 @@ box-shadow:
     0 18px 45px rgba(0, 31, 63, 0.12);
 
   transition: all 0.25s ease;
+  opacity: 0.8;
 }
 
 .top:hover, .bottom:hover, .top2:hover, .bottom2:hover {
@@ -344,6 +365,21 @@ box-shadow:
   justify-content: center;
   align-items: center;
   width: 100%!important;
+  opacity: 0.95;
+}
+
+.label {
+  width: 100%;
+}
+
+.email-card2 {
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: 100%!important;
+}
+
+.email-card2:hover {
+  transform: translateY(-3px);
 }
 </style>
 

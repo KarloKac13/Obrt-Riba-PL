@@ -419,7 +419,7 @@ export default {
   async copyEmail(email) {
     try {
       await navigator.clipboard.writeText(email);
-      this.errorMessage = "Email copied to clipboard!";
+      this.errorMessage = "E-mail kopiran!";
       setTimeout(() => (this.errorMessage = ""), 1500);
     } catch (e) {
       console.error("Copy failed", e);
@@ -1093,5 +1093,6 @@ textarea:focus {
     align-items: center!important;
     flex-flow: row!important;
     justify-content: space-between!important;
+    height: 550px;
   }
 </style>

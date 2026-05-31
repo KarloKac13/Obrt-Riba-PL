@@ -7,6 +7,11 @@ body {
 }
 
 @media (min-width: 320px) {
+
+  .section-title {
+    font-size: 18px!important;
+  }
+
   .navBarContainer {
     display: flex !important;
     flex-flow: row !important;
@@ -18,14 +23,20 @@ body {
     display: flex!important;
     align-items: center!important;
     flex-flow: column!important;
+    height: auto;
   }
 
   .navBar {
     flex-direction: row!important;
     flex-wrap: wrap!important;
     justify-content: space-between !important;
-    height: 100px;
+    height: auto;
+    width: auto;
   }
+
+  .nav-left, .nav-right {
+    gap: 0px;
+}
 
   /* Scope to nav only — don't override all anchors */
 .navBar a,
@@ -88,11 +99,11 @@ body {
     height: 75px;
   }
 
-  #top, #bottom, #top2, #bottom2 {
+  .top, .bottom, .top2, .bottom2 {
     display: flex;
     flex-flow: column;
     color: #001a33;
-    font-size: 14px;
+    font-size: 12px!important;
     font-family: "Montserrat", sans-serif;
     line-height: 1.75;
     width: 750px;
@@ -192,9 +203,24 @@ a {
     width: auto!important;
 }
 
+.opacityVisible {
+    height: 100%;
+}
+
 }
 
 @media (min-width: 481px) {
+
+  .opacityVisible {
+    height: 100%;
+}
+
+  .mobileStyle {
+    display: flex!important;
+    align-items: center!important;
+    flex-flow: column!important;
+    height: auto;
+  }
 
   .list {
     display: flex;
@@ -220,7 +246,7 @@ a {
 
   .navBar {
     flex-direction: row!important;
-    width: auto;
+    height: auto;
   }
 
 
@@ -322,6 +348,10 @@ ul.p li {
 
 @media (min-width: 601px) {
 
+  .opacityVisible {
+    height: 100%;
+}
+
   .list {
     display: flex;
     flex-flow: column;
@@ -343,6 +373,7 @@ ul.p li {
 
 .navBar {
     flex-direction: column!important;
+    height: auto;
   }
 
   #top, #bottom, #top2, #bottom2 {
@@ -426,6 +457,7 @@ ul.p li {
         align-items: center !important;
         flex-flow: column !important;
         justify-content: space-between;
+        height: auto;
     }
 
     
@@ -436,6 +468,10 @@ ul.p li {
 }
 
 @media (min-width: 769px) {
+
+  .opacityVisible {
+    height: 100%;
+}
 
   .list {
     display: flex;
@@ -469,6 +505,7 @@ ul.p li {
 
   .navBar {
     flex-direction: column!important;
+    height: auto;
   }
 
   input {
@@ -502,6 +539,7 @@ ul.p li {
     display: flex!important;
     align-items: center!important;
     flex-flow: column!important;
+    height: auto;
   }
 
 }
@@ -512,6 +550,7 @@ ul.p li {
     flex-direction: row!important;
     flex-wrap: wrap!important;
     justify-content: space-evenly !important;
+    height: 200px;
   }
 
   .navBar a,
@@ -557,17 +596,16 @@ ul.p li {
 
   .descriptionContent {
     height: 100%!important;
-    justify-content: end !important;
+    justify-content: start !important;
 }
 
 .descriptionContent2 {
-    height: 100%!important;
-    justify-content: end !important;
+    height: auto!important;
 }
 
 .p1 {
     color: #001f3f;
-    font-size: 25px !important;
+    font-size: 20px !important;
     font-family: "Montserrat", sans-serif;
     line-height: 50px !important;
     text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #001, 0 0 9px #001f, 0 0 14px #001f3f;
@@ -580,15 +618,9 @@ ul.p li {
 .carousel-item {
     width: 100%;
     height: 100%;
-  }
- 
-.carousel-wrapper {
-    height: 100%;
+    top:0%;
   }
 
-  .carousel {
-     height: 0px;
-  }
 
   .email-grid {
     display: flex;
@@ -611,10 +643,10 @@ textarea {
 .list {
     display: flex;
     flex-flow: column;
-    height: 100% !important;
+    height: auto !important;
     width: 100% !important;
     align-items: center !important;
-    justify-content: end !important;
+    justify-content: start !important;
 
 }
 
@@ -658,6 +690,8 @@ ul.p li {
     align-items: center !important;
     flex-flow: row !important;
     justify-content: space-between !important;
+    height: 550px;
+  
 }
 
 .navBarContainer { 
@@ -673,4 +707,21 @@ ul.p li {
   width: 100%!important;
 }
 
+.nav-left, .nav-right {
+        gap: 30px;
+}
+
+.carousel {
+    height: 0px;
+}
+
+.section-title {
+    font-size: 22px!important;
+  }
+
+  .top, .bottom, .top2, .bottom2 {
+    font-size: 20px !important;
+    opacity: 0.8!important;
+  }
+  
 }

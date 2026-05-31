@@ -234,8 +234,8 @@ export default {
     return {
       navLinks: [
         { label: "O nama", component: "about-me" },
-        { label: "Usluge", component: "my-projects" },
-        { label: "Projekti", component: "contact-me" },
+        { label: "Usluge", component: "the-services" },
+        { label: "Projekti", component: "the-projects" },
       ],
 
       form: {

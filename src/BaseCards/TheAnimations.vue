@@ -228,7 +228,7 @@ box-shadow:
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 70%;
+  width: 70%!important;
 }
 
 /* AFTER — scoped to cards only */

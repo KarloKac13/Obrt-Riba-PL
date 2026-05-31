@@ -11,7 +11,7 @@ body {
     display: flex !important;
     flex-flow: row !important;
     width: 65%;
-    height: 0%;
+    height: auto;
   }
 
   .mobileStyle {
@@ -42,7 +42,7 @@ body {
   justify-content: center;
   transition: all 0.25s ease;
   opacity: 1 !important;
-  font-size: 20px!important;
+  font-size: 15px!important;
 }
 
   img {
@@ -109,6 +109,12 @@ body {
 
 .descriptionContent {
     height: 93%!important;
+    justify-content: end !important;
+}
+
+.descriptionContent2 {
+    height: auto!important;
+    justify-content: end !important;
 }
 
 ul.p {
@@ -157,7 +163,7 @@ ul.p li {
     height: 100% !important;
     width: 100% !important;
     align-items: center !important;
-
+    justify-content: center!important;
 }
 
 a {
@@ -182,9 +188,22 @@ a {
     left: 10px;
 }
 
+.paragraphCenter {
+    width: auto!important;
+}
+
 }
 
 @media (min-width: 481px) {
+
+  .list {
+    display: flex;
+    flex-flow: column;
+    height: 100% !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: end !important;
+}
 
   img {
     height: 250px;
@@ -195,13 +214,15 @@ a {
     display: flex !important;
     flex-flow: row !important;
     width: 65%;
-    height: 5%;
+    height: auto;
     justify-content: start !important;
   }
 
   .navBar {
-    flex-direction: column!important;
+    flex-direction: row!important;
+    width: auto;
   }
+
 
   .navBar a,
 .navBarContainer a {
@@ -244,6 +265,11 @@ a {
 
 .descriptionContent {
     height: 95%!important;
+    justify-content: end !important;
+}
+.descriptionContent2 {
+    height: auto!important;
+    justify-content: end !important;
 }
 
 ul.p {
@@ -288,9 +314,23 @@ ul.p li {
     width: 100%;
 }
 
+.paragraphCenter {
+    width: auto!important;
+}
+
 }
 
 @media (min-width: 601px) {
+
+  .list {
+    display: flex;
+    flex-flow: column;
+    height: 100% !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: end !important;
+
+}
 
   input {
         width: 96.5%;
@@ -326,7 +366,13 @@ ul.p li {
 
 .descriptionContent {
         height: 90% !important;
+        justify-content: end !important;
     }
+
+.descriptionContent2 {
+    height: auto!important;
+    justify-content: end !important;
+}
 
 .p1,
 .p2 {
@@ -382,9 +428,24 @@ ul.p li {
         justify-content: space-between;
     }
 
+    
+.navBarContainer { 
+  height: auto; 
+} 
+
 }
 
 @media (min-width: 769px) {
+
+  .list {
+    display: flex;
+    flex-flow: column;
+    height: 100% !important;
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: end !important;
+
+}
 
   img {
     height: 250px;
@@ -401,7 +462,7 @@ ul.p li {
     display: flex !important;
     flex-flow: row !important;
     width: 65%;
-    height: 10%;
+    height: auto;
     justify-content: start !important;
   }
 
@@ -415,6 +476,12 @@ ul.p li {
 
     .descriptionContent {
     height: 95%!important;
+    justify-content: end !important;
+}
+
+.descriptionContent2 {
+    height: auto!important;
+    justify-content: end !important;
 }
 
 .carousel-wrapper {
@@ -448,7 +515,7 @@ ul.p li {
 
   .navBar a,
 .navBarContainer a {
-  font-size: 15px;
+  font-size: 20px!important;
   padding: 8px 20px;
 }
 
@@ -489,6 +556,12 @@ ul.p li {
 
   .descriptionContent {
     height: 100%!important;
+    justify-content: end !important;
+}
+
+.descriptionContent2 {
+    height: 100%!important;
+    justify-content: end !important;
 }
 
 .p1 {
@@ -539,8 +612,8 @@ textarea {
     flex-flow: column;
     height: 100% !important;
     width: 100% !important;
-    justify-content: flex-end !important;
     align-items: center !important;
+    justify-content: end !important;
 
 }
 
@@ -585,5 +658,9 @@ ul.p li {
     flex-flow: row !important;
     justify-content: space-between !important;
 }
+
+.navBarContainer { 
+  height: auto; 
+} 
 
 }

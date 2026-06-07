@@ -122,7 +122,7 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
               <span class="label">Ivan Ribarić</span>
               <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('ivan@ribaprofitlab.com')">ivan@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('ivan@ribaprofitlab.com')">ivan@ribaprofitlab.com</span>
               </span>
             </span>
           </p>

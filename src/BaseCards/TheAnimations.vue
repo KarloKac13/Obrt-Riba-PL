@@ -98,7 +98,7 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
               <span class="label">Info</span>
               <span style=" text-align: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('info@rpl.com')">info@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('info@ribaprofitlab.com')">info@ribaprofitlab.com</span>
               </span>
             </span>
             <br>
@@ -106,7 +106,7 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
               <span class="label">Davor Ribarić</span>
               <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('davor@rpl.com')">davor@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('davor@ribaprofitlab.com')">davor@ribaprofitlab.com</span>
               </span>
             </span>
             <br>
@@ -114,7 +114,7 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
               <span class="label">Karlo Manojlović</span>
               <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('karlo@rpl.com')">karlo@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('karlo@ribaprofitlab.com')">karlo@ribaprofitlab.com</span>
               </span>
             </span>
             <br>
@@ -122,7 +122,7 @@ Omogućujemo moderno i učinkovito oglašavanje na našem webu kako bismo vašem
               <span class="label">Ivan Ribarić</span>
               <span style="width: 100%: left; display: flex; align-items: center; justify-content: center;">
               <span class="icon">✉</span>
-              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('ivan@rpl.com')">ivan@rpl.com</span>
+              <span style="text-decoration: underline;" class="email-card2 label" @click="openEmail('ivan@ribaprofitlab.com')">ivan@rpl.com</span>
               </span>
             </span>
           </p>

@@ -99,14 +99,14 @@
 
   <div class="email-grid">
   <div style="display: flex; flex-flow: column; align-items: center; width: 100%;">
-    <div class="email-card" @click="openEmail('info@ribaprofitlab.com')">
+    <div style="display: flex; align-items: center;" @click="openEmail('info@ribaprofitlab.com')">
       <span class="icon">✉</span>
       <span class="label">info@ribaprofitlab.com</span>
     </div>
     <button class="copy" @click.stop="copyEmail('info@ribaprofitlab.com')">
         Kopiraj email
       </button>
-      <div style="display: flex; flex-flow: row; justify-content: flex-end; align-items: center; width: 90%; flex-wrap: wrap;">
+      <div style="display: flex; flex-flow: row; justify-content: flex-end; align-items: center; flex-wrap: wrap;">
         <span class="icon">📞</span>
         <span href="tel:+385977947589" class="label phone-link" @click="callNumber('+385977947589')">+385 97 794 7589</span>
       </div>

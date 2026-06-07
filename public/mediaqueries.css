@@ -8,6 +8,13 @@ body {
 
 @media (min-width: 320px) {
 
+  .icon {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #001f3f;
+        width: auto;
+    }
+
   .section-title {
     font-size: 18px!important;
   }
@@ -156,12 +163,6 @@ ul.p li {
     flex-direction: column;
     width: 100%;
     justify-content: center;
-}
-
-.icon {
-    font-size: 12px;
-    color: #001f3f;
-    width: 100%;
 }
 
 #form {
@@ -337,7 +338,7 @@ ul.p li {
 .icon {
     font-size: 18px;
     color: #001f3f;
-    width: 100%;
+    width: auto;
 }
 
 .paragraphCenter {
@@ -450,6 +451,7 @@ ul.p li {
     font-size: 18px;
     margin-right: 10px;
     color: #001f3f;
+    width: auto;
 }
 
 .mobileStyle {
@@ -542,6 +544,12 @@ ul.p li {
     height: auto;
   }
 
+  .icon {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #001f3f;
+        width: auto;
+}
 }
 
 @media (min-width: 1025px) {
@@ -633,7 +641,7 @@ ul.p li {
   font-size: 18px;
   margin-right: 10px;
   color: #001f3f;
-  width: 13%;
+  width: auto;
 }
 
 textarea {

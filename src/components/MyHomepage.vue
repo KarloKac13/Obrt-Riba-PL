@@ -99,9 +99,9 @@
 
   <div class="email-grid">
   <div style="display: flex; flex-flow: column; align-items: center; width: 100%;">
-    <div class="email-card" @click="openEmail('info@rpl.com')">
+    <div class="email-card" @click="openEmail('info@ribaprofitlab.com')">
       <span class="icon">✉</span>
-      <span class="label">info@rpl.com</span>
+      <span class="label">info@r.com</span>
     </div>
     <button class="copy" @click.stop="copyEmail('info@rpl.com')">
         Kopiraj email

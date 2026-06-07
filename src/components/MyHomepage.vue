@@ -101,9 +101,9 @@
   <div style="display: flex; flex-flow: column; align-items: center; width: 100%;">
     <div class="email-card" @click="openEmail('info@ribaprofitlab.com')">
       <span class="icon">✉</span>
-      <span class="label">info@r.com</span>
+      <span class="label">info@ribaprofitlab.com</span>
     </div>
-    <button class="copy" @click.stop="copyEmail('info@rpl.com')">
+    <button class="copy" @click.stop="copyEmail('info@ribaprofitlab.com')">
         Kopiraj email
       </button>
       <div style="display: flex; flex-flow: row; justify-content: flex-end; align-items: center; width: 90%; flex-wrap: wrap;">

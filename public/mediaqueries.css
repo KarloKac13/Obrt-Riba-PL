@@ -361,7 +361,7 @@ ul.p li {
 }
 
 .paragraphCenter {
-    width: auto!important;
+    width: 100% !important;
 }
 
 .contactBox {
@@ -610,6 +610,13 @@ ul.p li {
   width: 100%!important;
 }
 
+.paragraphCenter {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 70%!important;
+
+}
 }
 
 @media (min-width: 1025px) {
@@ -795,6 +802,10 @@ ul.p li {
   display: flex!important; 
   justify-content: center!important; 
   width: 50%!important;
+}
+
+.paragraphCenter {
+    width: 70% !important;
 }
   
 }

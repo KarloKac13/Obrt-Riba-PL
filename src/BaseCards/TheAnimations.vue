@@ -287,7 +287,7 @@ box-shadow:
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 70%!important;
+  width: 70%;
 }
 
 /* AFTER — scoped to cards only */

@@ -1109,4 +1109,8 @@ textarea:focus {
     justify-content: space-between!important;
     height: 550px;
   }
+
+.logo {
+  width:auto!important;
+}
 </style>

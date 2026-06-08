@@ -145,15 +145,12 @@
       </div></div>
       
       <!-- MOVE COOKIE BAR HERE -->
-<div v-if="showCookies" class="cookie-bar">
-  <p>
-    Ova stranica koristi osnovne kolačiće potrebne za rad stranice i obradu kontakt forme.
-  </p>
-
-  <button @click="acceptCookies">
-    U redu
-  </button>
-</div>
+<Teleport to="body">
+  <div v-if="showCookies" class="cookie-bar">
+    <p>Ova stranica koristi osnovne kolačiće...</p>
+    <button @click="acceptCookies">U redu</button>
+  </div>
+</Teleport>
     </div>
   </div>
   <div style="display: flex; justify-content: center; width: 100% ">
@@ -951,7 +948,7 @@ textarea:focus {
   gap: 12px !important;
 
   box-shadow: 0 10px 25px rgba(0,0,0,0.12) !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
 }
 
 .cookie-bar p {

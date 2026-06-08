@@ -147,7 +147,7 @@
       <!-- MOVE COOKIE BAR HERE -->
 <Teleport to="body">
   <div v-if="showCookies" class="cookie-bar">
-    <p>Ova stranica koristi osnovne kolačiće...</p>
+    <p>Ova stranica koristi osnovne kolačiće potrebne za rad stranice i obradu kontakt forme.</p>
     <button @click="acceptCookies">U redu</button>
   </div>
 </Teleport>

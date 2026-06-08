@@ -45,8 +45,8 @@
       <div class="spiral" id="spiral"></div>
     </div>
   </div>-->
-    <div style="display: flex; justify-content: center; width: 50%">
-      <div :class="['contactBox']">
+    <div class="contactBox">
+      <div :class="['contactBox2']">
         <form @submit.prevent="submitForm" id="form">
           <p style="font-weight: bold; text-decoration: underline">
             Pošaljite nam upit!
@@ -684,7 +684,21 @@ display: flex!important;
   border-radius: 20px!important;
   width: 100%!important;
   position: relative;
+  padding: 10px!important;
 }
+
+.contactBox2 {
+  display: flex!important;
+  flex-flow: column!important;
+  justify-content: space-evenly!important;
+  opacity: 0.8!important;
+  border-radius: 20px!important;
+  width: 100%!important;
+  position: relative;
+  padding: 10px!important;
+}
+
+
 
 /* background-color: #eef3f8 !important;
 border: 1px solid rgba(0, 31, 63, 0.08) !important;

@@ -2,8 +2,9 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 @media (min-width: 320px) {
@@ -36,14 +37,10 @@ body {
   .navBar {
     flex-direction: row!important;
     flex-wrap: wrap!important;
-    justify-content: space-between !important;
     height: auto;
     width: auto;
+    padding-top:10px;
   }
-
-  .nav-left, .nav-right {
-    gap: 0px;
-}
 
   /* Scope to nav only — don't override all anchors */
 .navBar a,
@@ -99,6 +96,9 @@ body {
 
   .carousel {
     height: 140px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
   }
 
   .carousel-item {
@@ -208,7 +208,28 @@ a {
     height: 100%;
 }
 
+.logo {
+      display: flex;
+    width: 100%;
+    /* align-self: center; */
+    justify-content: center;
+    text-align: center;
 }
+
+.contactBox {
+  display: flex!important;
+  flex-flow: column!important;
+  justify-content: space-evenly!important;
+  height: 100%!important;
+  opacity: 0.8!important;
+  border-radius: 20px!important;
+  width: 100%!important;
+  position: relative;
+  padding: 10px!important;
+}
+
+}
+
 
 @media (min-width: 481px) {
 
@@ -240,9 +261,7 @@ a {
   .navBarContainer {
     display: flex !important;
     flex-flow: row !important;
-    width: 65%;
     height: auto;
-    justify-content: start !important;
   }
 
   .navBar {
@@ -271,7 +290,7 @@ a {
         width: 95.5%;
     }
 
-    #top, #bottom, #top2, #bottom2 {
+    .top, .bottom, .top2, .bottom2 {
     display: flex;
     flex-flow: column;
     color: #001a33;
@@ -345,6 +364,18 @@ ul.p li {
     width: auto!important;
 }
 
+.contactBox {
+  display: flex!important;
+  flex-flow: column!important;
+  justify-content: space-evenly!important;
+  height: 100%!important;
+  opacity: 0.8!important;
+  border-radius: 20px!important;
+  width: 100%!important;
+  position: relative;
+  padding: 10px!important;
+}
+
 }
 
 @media (min-width: 601px) {
@@ -364,20 +395,20 @@ ul.p li {
 }
 
   input {
-        width: 96.5%;
+        width: 100%;
     }
 
     img {
-    height: 250px;
-    width: 375px;
-  }
+        height: 175px;
+        width: 275px;
+    }
 
 .navBar {
-    flex-direction: column!important;
+    flex-direction: row!important;
     height: auto;
   }
 
-  #top, #bottom, #top2, #bottom2 {
+  .top, .bottom, .top2, .bottom2 {
     display: flex;
     flex-flow: column;
     color: #001a33;
@@ -465,7 +496,21 @@ ul.p li {
     
 .navBarContainer { 
   height: auto; 
-} 
+}
+
+.logo {
+        display: flex;
+        width: auto;
+        /* align-self: center; */
+        justify-content: center;
+        text-align: center;
+    }
+
+      .contactBox {
+  display: flex!important; 
+  justify-content: center!important; 
+  width: 100%!important;
+}
 
 }
 
@@ -506,12 +551,12 @@ ul.p li {
   }
 
   .navBar {
-    flex-direction: column!important;
+    flex-direction: row!important;
     height: auto;
   }
 
   input {
-        width: 97%;
+        width: 100%;
     }
 
     .descriptionContent {
@@ -550,6 +595,21 @@ ul.p li {
         color: #001f3f;
         width: auto;
 }
+
+.logo {
+        display: flex;
+        width: auto;
+        /* align-self: center; */
+        justify-content: center;
+        text-align: center;
+    }
+
+      .contactBox {
+  display: flex!important; 
+  justify-content: center!important; 
+  width: 100%!important;
+}
+
 }
 
 @media (min-width: 1025px) {
@@ -626,7 +686,6 @@ ul.p li {
 .carousel-item {
     width: 100%;
     height: 100%;
-    top:0%;
   }
 
 
@@ -720,8 +779,8 @@ ul.p li {
 }
 
 .carousel {
-    height: 0px;
-}
+        height: auto;
+    }
 
 .section-title {
     font-size: 22px!important;
@@ -731,5 +790,12 @@ ul.p li {
     font-size: 20px !important;
     opacity: 0.8!important;
   }
+
+  .contactBox {
+  display: flex!important; 
+  justify-content: center!important; 
+  width: 50%!important;
+}
   
 }
+

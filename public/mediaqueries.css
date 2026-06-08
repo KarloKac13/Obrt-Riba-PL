@@ -85,7 +85,7 @@ html, body {
         width: 50%;
         color: #001f3f;
         height: 36px !important;
-}
+  }
 
 #send {
   height: 36px;
@@ -210,8 +210,8 @@ a {
 }
 
 .logo {
-      display: flex;
-    width: 100%;
+    display: flex;
+    width: 100%!important;
     /* align-self: center; */
     justify-content: center;
     text-align: center;
@@ -807,6 +807,10 @@ ul.p li {
 
 .paragraphCenter {
     width: 70% !important;
+}
+
+.logo {
+  width:auto!important;
 }
   
 }

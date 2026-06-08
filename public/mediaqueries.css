@@ -598,7 +598,7 @@ ul.p li {
 
 .logo {
         display: flex;
-        width: auto;
+        width: 100%;
         /* align-self: center; */
         justify-content: center;
         text-align: center;
